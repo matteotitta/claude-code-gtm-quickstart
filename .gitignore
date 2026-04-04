@@ -1,0 +1,20 @@
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code plans (ephemeral)
+.claude/plans/
+
+# Draft files
+*.draft.md
+
+# Node (if any tools are added later)
+node_modules/
+
+# IDE
+.vscode/
+.idea/
