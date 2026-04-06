@@ -11,20 +11,47 @@ You are running the full context engineering loop for a marketing operator. This
 
 ---
 
+## Phase 0: Verify inputs
+
+Before starting any research, confirm you have everything needed. Read CLAUDE.md and check:
+
+1. **Company name and website** — Is the `## Who I am` section personalized (not the starter placeholder)?
+2. **Competitors** — Does `## Competitive landscape` list actual competitor names?
+3. **Voice and audiences** — Is `## Voice and style` populated with real adjectives and preferences?
+
+If ANY of these are still placeholder/generic:
+- Tell the user: "Your CLAUDE.md hasn't been personalized yet. Run `/quickstart` first to set up your company context, then come back to `/context-loop`."
+- Stop here. Do not proceed.
+
+If CLAUDE.md is personalized, confirm the inputs with the user:
+
+"Before I start, let me confirm what I'm working with:
+
+- **Company:** [name] ([website])
+- **Competitors:** [list from CLAUDE.md]
+
+I'll research your company first, then all competitors in parallel, then build your ICP, positioning, and messaging — each step feeding the next.
+
+Anything you'd like to add or change before I begin? (e.g., add a competitor, update the website URL)"
+
+Wait for confirmation before proceeding.
+
+---
+
 ## Overview
 
-Present this to the user before starting:
+After confirmation, present this:
 
 "Starting the context engineering loop for [Company Name].
 
 This will generate 5 outputs in sequence:
 
-1. **Company context** — your market position, traction data, team, funding
-2. **Competitor research** — deep profiles for [list competitors from CLAUDE.md]
+1. **Company context** — your market position, traction data, team, funding (~5 min)
+2. **Competitor research** — deep profiles for [list competitors] (~10 min)
    (these run in parallel — one agent per competitor)
-3. **ICP research** — who buys from you and why
-4. **Positioning** — how you differentiate from alternatives
-5. **Product messaging** — your messaging library
+3. **ICP research** — who buys from you and why (~5 min)
+4. **Positioning** — how you differentiate from alternatives (~3 min)
+5. **Product messaging** — your messaging library (~3 min)
 
 Each step feeds the next. Everything saves to the right folder automatically.
 Let's begin."
