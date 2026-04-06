@@ -1,6 +1,6 @@
-# Claude Code for GTM — quickstart
+# Genesys Claude Code for GTM — quickstart
 
-Get Claude Code running your go-to-market research in 30 minutes. Clone this repo, run two commands, and walk away with competitive intelligence, customer profiles, positioning, and a messaging library — all built on your actual company data.
+Get Claude Code running your go-to-market research in 30 minutes. Clone this repo, run two commands, and walk away with competitive intelligence, ICP profiles, positioning, and a messaging library — all built on your actual company data.
 
 <!-- TODO: Add hero screenshot — see "Screenshots to take" section at the bottom -->
 <!-- ![Claude Code for GTM in Cursor](docs/images/quickstart-cursor.png) -->
@@ -26,15 +26,48 @@ Open in Cursor or VS Code. Click the orange Claude Code icon in the right sideba
 
 ---
 
+## Who this is for
+
+B2B marketing operators who want to learn Claude Code for GTM work — product marketers, content strategists, demand gen and growth marketers, brand managers, marketing ops, GTM engineers, and everything in between.
+
+You don't need to know how to code. You don't need terminal experience. You don't need to have used GitHub before. This repo is designed for marketers who want the power of Claude Code without the developer learning curve.
+
+**This is not:**
+- A chatbot or prompt library
+- A developer tool (though developers can use it too)
+- A replacement for strategic thinking (it accelerates your process, it doesn't replace your judgment)
+
+---
+
+## Requirements
+
+- **Claude Max** ($100/mo, recommended) or **Pro** ($20/mo) — get one week on me at [claude.ai]([https://claude.ai](https://claude.ai/referral/vq_wUYBj3A))
+- **Mac** computer with admin access
+- **Cursor** IDE (free) or **VS Code** (free) — [cursor.com](https://cursor.com) / [code.visualstudio.com](https://code.visualstudio.com)
+- **VS Code Extension for Claude Code** — a UI upgrade for your Claude Code experience inside your IDE
+- Stable internet connection
+- No API keys needed to start (optional upgrades available later)
+
+<details>
+<summary>What is a Claude subscription? How is this different from ChatGPT?</summary>
+
+Claude is Anthropic's AI model. Claude Code is a tool that runs Claude *inside your project folder* — it can read your files, create new ones, search the web, and follow structured processes (skills). This is fundamentally different from a browser chatbot like ChatGPT or Claude.ai, because Claude Code works with your actual files and remembers your context across sessions via CLAUDE.md.
+
+You need a paid Claude subscription (Max or Pro) to use Claude Code. The free tier doesn't work. Max ($100/mo) gives you more usage and access to the most powerful model (Opus). Pro ($20/mo) works but you'll hit usage limits faster.
+
+</details>
+
+---
+
 ## What you get
 
-This repo is a pre-configured Claude Code workspace for B2B marketing. Everything is set up: the folder structure, the skills, the commands, the agents, and the templates. You just add your company's details and run the skills.
+This repo is a pre-configured Claude Code workspace for B2B marketing operators. Everything is set up for you: the folder structure, the skills, the commands, the agents, and the templates. You just add your company's inputs and run the skills.
 
 ### The context engineering loop
 
 ```
-company-context → competitor-research (parallel) → icp-research → positioning → product-messaging
-     (you)              (them x N)                  (who buys)     (strategy)      (execution)
+company-context → competitor-research (parallel) → icp-research → positioning → product-messaging → linkedin-content
+     (context)              (context)               (context)     (strategy)      (strategy)           (execution)
 ```
 
 You start with context. Context feeds strategy. Strategy feeds execution. Every piece builds on the last.
@@ -67,13 +100,17 @@ Claude Code loads CLAUDE.md files at three levels, all additive:
 
 Every line in CLAUDE.md shapes every response. The more specific your context, the better the output. Start lean and iterate — every time Claude gets something wrong, add a rule to prevent it.
 
+When you run `/quickstart`, you'll interactively create your CLAUDE.md file based on your profile and line of work.
+
 </details>
 
-### 9 Skills
+### Skills
 
 Skills are reusable prompt templates saved as files. Instead of re-explaining competitive analysis every session, you build a skill once and run `/competitor-research Acme` forever. The skill handles the process, the output format, and the quality checks — you just name the competitor.
 
 Each skill folder includes an `example-output.md` so you can see what the skill produces before running it on your own company. The `/company-context` skill has a fully worked example using Linear as a reference.
+
+In this quickstart, you'll get the following skills directly from my library:
 
 | Skill | Level | What it produces |
 |-------|-------|-----------------|
@@ -87,6 +124,8 @@ Each skill folder includes an `example-output.md` so you can see what the skill 
 | `/content-strategy` | Strategy | Channel mix, content pillars, editorial plan |
 | `/steal` | Meta | Break down what makes something work, adapt it for you |
 
+If you want more skills, subscribe to my [newsletter](https://newsletter.genesysgrowth.com/).
+
 <details>
 <summary>What is a skill? How do they work?</summary>
 
@@ -98,7 +137,7 @@ Skills live at `.claude/skills/[skill-name]/SKILL.md`. You can read, edit, or cr
 
 </details>
 
-### 4 Commands
+### Commands
 
 Commands are quick-access prompts you trigger with `/`. They're different from skills — commands are one-off workflows (like onboarding or diagnostics), while skills are repeatable tasks (like competitive analysis).
 
@@ -121,7 +160,7 @@ Both are invoked with `/` in the Claude Code chat. You can create your own comma
 
 </details>
 
-### 2 Agents
+### Agents
 
 Agents are specialized sub-processes that handle specific types of work. When you run `/context-loop`, Claude dispatches one agent per competitor and researches them all simultaneously — like sending 3 analysts to research 3 companies at the same time, instead of doing them one by one.
 
@@ -145,38 +184,6 @@ Two templates help you extend the system:
 
 - **`templates/CLAUDE-MD-TEMPLATE.md`** — A guided prompt for writing your CLAUDE.md from scratch. Asks 7 questions and generates the file. Useful if you want to start over or create a CLAUDE.md for a different project.
 - **`templates/SKILL-MD-TEMPLATE.md`** — A guided prompt for building custom skills. Describes the 7-section SKILL.md structure and walks you through creating your own reusable skill.
-
----
-
-## Who this is for
-
-B2B marketing operators who want to use Claude Code for GTM work — product marketers, content strategists, demand gen managers, brand managers, marketing ops.
-
-You don't need to know how to code. You don't need terminal experience. You don't need to have used GitHub before. This repo is designed for marketers who want the power of Claude Code without the developer learning curve.
-
-**This is not:**
-- A chatbot or prompt library
-- A developer tool (though developers can use it too)
-- A replacement for strategic thinking (it accelerates your process, it doesn't replace your judgment)
-
----
-
-## Requirements
-
-- **Claude Max** ($100/mo, recommended) or **Pro** ($20/mo) subscription at [claude.ai](https://claude.ai)
-- **Mac** computer with admin access (Windows and Linux: not yet supported)
-- **Cursor** IDE (free) or **VS Code** (free) — [cursor.com](https://cursor.com) / [code.visualstudio.com](https://code.visualstudio.com)
-- Stable internet connection
-- No API keys needed to start (optional upgrades available later)
-
-<details>
-<summary>What is a Claude subscription? How is this different from ChatGPT?</summary>
-
-Claude is Anthropic's AI model. Claude Code is a tool that runs Claude *inside your project folder* — it can read your files, create new ones, search the web, and follow structured processes (skills). This is fundamentally different from a browser chatbot like ChatGPT or Claude.ai, because Claude Code works with your actual files and remembers your context across sessions via CLAUDE.md.
-
-You need a paid Claude subscription (Max or Pro) to use Claude Code. The free tier doesn't work. Max ($100/mo) gives you more usage and access to the most powerful model (Opus). Pro ($20/mo) works but you'll hit usage limits faster.
-
-</details>
 
 ---
 
@@ -270,30 +277,30 @@ Save your skill to `.claude/skills/[skill-name]/SKILL.md` and invoke it by name:
 <details>
 <summary>Why Cursor instead of VS Code?</summary>
 
-Cursor is a free code editor built on the same foundation as VS Code. It has all the same features, plus built-in AI capabilities. Both work equally well with Claude Code. We recommend Cursor because it's the most common editor in the Claude Code community and the setup is slightly simpler.
-
-If you already use VS Code, that works too — install the Claude Code extension from the Extensions marketplace (search "Claude Code").
+Cursor is a free code editor built on the same foundation as VS Code. It has all the same features, plus built-in AI capabilities. Both work equally well with Claude Code. If you already use VS Code, that works too — install the Claude Code extension from the Extensions marketplace (search "Claude Code").
 
 </details>
 
-### Step 2: Install the Claude Code extension (3 min)
+### Step 2: Install the VS Claude Code extension (3 min)
 
 1. In Cursor, find the **Extensions icon** in the left sidebar (looks like 4 squares)
 2. Click it
-3. Search for: `claude code`
-4. Click **Install** on "Claude Code"
+3. Search for: `Claude Code for VS Code`
+4. Click **Install**
 5. Wait for the install to complete
 6. Look for the **orange Claude icon** in the right sidebar
-7. Click it to open the Claude Code panel
+7. Or press `Cmd+Shift+P` → search "Claude Code: Focus Input" → that's your everyday Claude Code UI within Cursor
 
-**Verify:** The Claude Code panel opens on the right side of your screen.
+**Verify:** The Claude Code panel looks like the below.
+
 
 ### Step 3: Authenticate Claude Code (2 min)
 
-1. In the Claude Code panel, click **"Sign in with Claude subscription"**
-2. Your browser opens — log in with your Claude Max or Pro account
-3. Approve the connection when prompted
-4. Return to Cursor
+1. In the Claude Code panel, write anything (eg. 'Hi') and press Enter
+2. You'll be prompted to **"Sign in with Claude subscription"**
+3. Your browser opens — log in with your Claude Max or Pro account
+4. Approve the connection when prompted
+5. Return to Cursor
 
 **Verify:** The Claude Code panel no longer shows a sign-in prompt. You see a text input where you can type messages.
 
@@ -301,19 +308,15 @@ If you already use VS Code, that works too — install the Claude Code extension
 
 ### Step 4: Clone this repo (3 min)
 
-1. In Cursor: **File > Open Folder**
-2. Navigate to your Documents folder (or wherever you want to keep this project)
-3. Click **New Folder** — name it something like `my-gtm-workspace`
-4. Open that folder
-5. Open the terminal: **Terminal > New Terminal** (top menu bar)
-6. In the terminal, paste this command and press Enter:
+1. In Claude UI, paste the below, paste this command and press Enter:
 
 ```bash
 git clone https://github.com/matteotitta/claude-code-gtm-quickstart.git .
 ```
 
-7. Wait for cloning to complete
-8. You should see files appear in the left sidebar (Explorer)
+2. Wait for cloning to complete
+3. You should see files appear in the left sidebar (Explorer, which is the navigation for your folder structure)
+4. If you don't see the Explorer, press `Cmd+B`
 
 **Verify:** You can see folders like `.claude/`, `context/`, `marketing/`, and files like `CLAUDE.md` and `README.md` in the Explorer.
 
@@ -330,7 +333,7 @@ If the command fails with "command not found," you need to install Git first. Op
 
 ### Step 5: Test that it works (2 min)
 
-1. Click the **orange Claude icon** in the right sidebar to open Claude Code
+1. Use `Cmd+Shift+P` → search "Claude Code: Focus Input" to open a new conversation with Claude Code
 2. Type this message and press Enter:
 
 ```
@@ -372,8 +375,6 @@ During the tour, Claude explained three modes:
 
 You also learned about the **effort slider** — keep it high for research tasks (like the context loop you're about to run), lower for quick questions.
 
-Toggle modes using the selector at the top of the Claude Code panel. Or use the command palette: `Cmd+Shift+P` → search "Claude Code: Toggle Plan Mode."
-
 </details>
 
 ### Step 7: Run the context engineering loop (25 min)
@@ -398,7 +399,7 @@ If you want more control — to review and adjust between steps — run each ski
 
 ```
 /company-context
-/competitor-research [competitor name]    ← run once per competitor
+/competitor-research [competitor name and URL]    ← run once per competitor
 /icp-research
 /positioning
 /product-messaging
@@ -407,6 +408,8 @@ If you want more control — to review and adjust between steps — run each ski
 Each skill reads the outputs from previous skills automatically. The order matters — run them in the sequence above.
 
 **Verify:** After the loop completes, check the `context/` folder — you should see files like `0426-company-context.md` and `0426-competitor-[name].md`. Check `marketing/product-marketing/` for positioning and messaging files.
+
+0426-name is my preferred naming convention for documents: 0426 stands for MMYY, so you know when each document was created to quickly identify recency.
 
 ### Step 8: Run /health-check (1 min)
 
@@ -445,7 +448,9 @@ git commit -m "Add context engineering outputs"   # 2. Commit — name the snaps
 
 Run these in the terminal inside Cursor (Terminal > New Terminal if you don't see one).
 
-### Back it up to GitHub (push)
+You can also ask Claude to "save your work locally" via the chat UI.
+
+### Push to GitHub
 
 1. Go to [github.com](https://github.com) and create a free account (if you don't have one)
 2. Click the **+** icon (top right) → **New repository**
@@ -493,9 +498,9 @@ git push -u origin update-positioning  # Push the branch to GitHub
 **Pull requests (PRs)** — A pull request is a formal proposal to merge your branch into the main version. It shows exactly what changed, and the reviewer can approve, comment, or request changes. Create one on GitHub after pushing your branch.
 
 **Folder-level ownership** — Different team members can own different parts of the project:
-- CMO reviews changes in `marketing/product-marketing/` (positioning, messaging)
-- Head of RevOps reviews changes in their subfolder
-- Content lead reviews `marketing/content/`
+- CMO reviews changes in `marketing/product-marketing/` (eg. positioning, messaging)
+- Head of RevOps reviews changes in their subfolder `marketing/marketing-ops` (eg. lead scoring, routing, enrichment)
+- Content lead reviews `marketing/content/` (eg. social posts, newsletters)
 
 GitHub's CODEOWNERS file can enforce this — changes to specific folders automatically request review from the right person.
 
@@ -574,6 +579,8 @@ Everything in this repo is a plain text file you can read and edit. Here's how t
 3. Save the file (`Cmd+S`)
 4. Start a new Claude Code conversation — your changes are active immediately
 
+You can also ask Claude to edit your CLAUDE.md in natural language via the chat UI.
+
 ### Build a new skill
 
 1. In Cursor's Explorer, open `templates/SKILL-MD-TEMPLATE.md` — read the 7-question process
@@ -584,6 +591,10 @@ Everything in this repo is a plain text file you can read and edit. Here's how t
 6. Create a new folder: right-click `.claude/skills/` in the Explorer → **New Folder** → name it (lowercase, hyphenated, e.g., `linkedin-post`)
 7. Save the SKILL.md inside that folder
 8. Test: type `/linkedin-post` (or whatever you named it) in Claude Code
+
+You can also ask Claude to create a new skill following the template in natural language, then instruct it to save it in a specific new or existing folder.
+
+**Recommended**: after creating a skill, run it with sample input and instruct Claude to save the output as a reference example in the skill folder to give it an example of what good output looks like.
 
 ### Add API keys for stronger research
 
@@ -600,6 +611,8 @@ FIRECRAWL_API_KEY=your-firecrawl-key-here
 5. Save the file. The `.gitignore` already protects `.env` from being uploaded to GitHub.
 6. Restart Claude Code (close and reopen the panel) — skills automatically use these when available
 
+You can also ask Claude to tell you exactly the step-by-step process for adding a new API or MCP connector.
+
 ### Create a new agent
 
 1. In Cursor's Explorer, open `.claude/agents/competitor-researcher.md` — read it as a reference
@@ -608,12 +621,16 @@ FIRECRAWL_API_KEY=your-firecrawl-key-here
 4. Edit the name, description, tools, and skill list for your use case
 5. Save — Claude will dispatch this agent when relevant tasks come up
 
+You can also ask Claude to create new agents for you in natural language via the chat UI.
+
 ### Add folders for your marketing org
 
 1. Right-click in the Explorer → **New Folder**
 2. Name it for your work area (e.g., `events/`, `webinars/`, `abm/`, `sales-enablement/`)
 3. Inside the new folder, create a `README.md` explaining what goes there — Claude reads these for context
 4. Example README content: "Event recap emails, registration summaries, and post-event follow-up sequences."
+
+You can also ask Claude to create or edit names of new folders for you directly via the chat UI.
 
 ---
 
@@ -658,7 +675,7 @@ For this quickstart repo:
 
 ---
 
-## Part of the Claude Code programme
+## Part of Genesys' Claude Code program
 
 This quickstart is step 1 of a 4-step progression:
 
@@ -673,35 +690,12 @@ Each step builds on the last. Complete one to unlock the next.
 
 The quickstart gives you the foundation — your company's context encoded in files, 9 research and strategy skills, and a folder structure that Claude reads automatically. The later steps add depth (more skills, tool integrations), speed (automation, mobile access), and scale (agents, quality gates, team workflows).
 
-Learn more at [GTM Engineer School](https://www.gtm-engineer-school.com/).
+For feedback or more, DM Matteo on [LinkedIn](https://www.linkedin.com/in/matteo-titta/).
 
 ---
 
-## Screenshots to take
-
-If you're reading this after cloning and want to add screenshots to your own README, here's exactly what to capture:
-
-**Hero image** (`docs/images/quickstart-cursor.png`):
-1. Open Cursor with this repo loaded
-2. Expand the file tree in the left sidebar so `.claude/`, `context/`, `marketing/` are visible
-3. Open the Claude Code panel (orange icon, right sidebar)
-4. Send a message like: "What skills are available in this repo?"
-5. Screenshot the full Cursor window showing: file tree + editor + Claude Code panel with response
-6. Crop to just the Cursor window (no desktop, no dock)
-
-**Repository details** (`docs/images/github-repo-details.png`):
-1. On GitHub, go to your repo page
-2. Click the gear icon next to "About"
-3. Screenshot the "Edit repository details" dialog
-
-**Context loop output** (`docs/images/context-loop-output.png`) — optional:
-1. Run `/context-loop` on your company
-2. Screenshot the summary table that appears when it finishes
-
----
-
-Built by [Genesys Growth](https://genesysgrowth.com). Part of the [GTM Engineer School](https://www.gtm-engineer-school.com/) Claude Code programme.
+Built by [Matteo Tittarelli](https://www.linkedin.com/in/matteo-titta/), founder & solopreneur at ([Genesys Growth](https://genesysgrowth.com).
 
 Pattern inspired by [Jacob Dietle's context-os-quickstart](https://github.com/jacob-dietle/gtm-context-os-quickstart).
 
-[Book a call](https://cal.com/matteo-titta/30min) · [Newsletter](https://newsletter.genesysgrowth.com/) · [Star this repo](https://github.com/matteotitta/claude-code-gtm-quickstart)
+[Book a call](https://calendly.com/genesys-growth/discovery-call) · [Newsletter](https://newsletter.genesysgrowth.com/) · [Star this repo](https://github.com/matteotitta/claude-code-gtm-quickstart)
