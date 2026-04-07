@@ -559,12 +559,25 @@ claude-code-gtm-quickstart/
 Run `/next-steps` to see what to build next. The highlights:
 
 1. **Push to GitHub** — back up your work to the cloud (see Git section above)
-2. **Add API keys** — Exa (better search, 1,000 free/mo at [exa.ai](https://exa.ai)) and Firecrawl (website scraping, 500 free/mo at [firecrawl.dev](https://firecrawl.dev)) make research skills stronger
-3. **Run more skills** — `/tov-guidelines` (brand voice), `/brand-guidelines` (visual identity), `/content-strategy` (editorial plan), `/steal` (pattern adaptation)
+2. **Run more skills** — `/tov-guidelines` (brand voice), `/brand-guidelines` (visual identity), `/content-strategy` (editorial plan), `/steal` (pattern adaptation)
+3. **Add API keys** — Exa (better search, 1,000 free/mo at [exa.ai](https://exa.ai)) and Firecrawl (website scraping, 500 free/mo at [firecrawl.dev](https://firecrawl.dev)) make research skills stronger
 4. **Build your own skills** — use `templates/SKILL-MD-TEMPLATE.md`
-5. **Connect MCP servers** — Google Drive, Notion, Slack (covered in Week 2)
+5. **Connect MCP servers** — Google Drive, Notion, Slack (covered in the full programme)
 
 **Recommended order after the loop:** TOV guidelines first (it enriches everything else), then content strategy, then brand guidelines.
+
+### Going further
+
+This quickstart builds your foundation — company context, competitive intelligence, ICP, positioning, and messaging. That's the research and strategy layer. The full Claude Code programme adds four layers on top:
+
+- **Quality gates** — hooks that automatically catch brand voice violations, fabricated metrics, and tone drift before output ships. No one needs to remember the checklist — Claude enforces it.
+- **Automation** — recurring tasks on schedule. Competitive digests every Monday morning. Content calendars every quarter. Pipeline summaries on demand. All triggered from your phone via Dispatch.
+- **Agents** — parallel execution. 4 competitors researched simultaneously, synthesized into one briefing. Sales enablement assets generated in parallel across the team.
+- **Team scale** — `git clone` gives every team member the whole system. PR-based skill approval means quality is enforced across the org, not just for one operator.
+
+The programme starts with a personalized intake — based on your role, experience level, and tool stack, every week is tailored to what you specifically need. No generic curriculum.
+
+**Ready to go further?** [GTM Engineer School](https://www.gtm-engineer-school.com/) · [Book a call](https://cal.com/matteo-titta/30min)
 
 ---
 
@@ -677,7 +690,7 @@ For this quickstart repo:
 
 ## Part of Genesys' Claude Code program
 
-This quickstart is step 1 of a 4-step progression:
+This quickstart is step 1 of a 4-week progression. Everything you've built here is real foundation work — not throwaway scaffolding. The programme builds directly on top of it.
 
 ```
 W1: Quickstart (this repo)        → Foundation: CLAUDE.md, skills, context loop
@@ -686,9 +699,31 @@ W3: Automation + Dispatch         → Speed: recurring tasks, mobile access
 W4: Full system                   → Scale: agents, hooks, rules, memory, sessions
 ```
 
-Each step builds on the last. Complete one to unlock the next.
+### What each week unlocks
 
-The quickstart gives you the foundation — your company's context encoded in files, 9 research and strategy skills, and a folder structure that Claude reads automatically. The later steps add depth (more skills, tool integrations), speed (automation, mobile access), and scale (agents, quality gates, team workflows).
+| Week | What you build | What changes for you |
+|------|---------------|---------------------|
+| **W1** (you've done most of this) | CLAUDE.md + 9 skills + context loop + GitHub repo | Claude knows your company. Every conversation starts with context. |
+| **W2** | 6+ custom skills + brand voice hook + context rules + team PR workflow | Quality is enforced automatically. Your team shares skills via Git. Claude loads the right context based on where you're working. |
+| **W3** | /loop automation + Dispatch (phone access) + Computer Use | Tasks run on schedule without you. Kick off work from your phone. Claude controls tools that don't have APIs. |
+| **W4** | Agents + channels (iMessage/Telegram) + vibe-coded tool | Parallel execution — 4 competitors researched simultaneously. Non-technical team members interact via messaging. You build a custom tool. |
+
+### What you've already built
+
+By completing the quickstart, you have:
+- A CLAUDE.md that encodes your company's identity, voice, and standards
+- Research outputs (company context, competitors, ICP) that feed every future skill
+- A positioning strategy and messaging library grounded in your actual market
+- A folder structure Claude reads automatically for context
+- 9 skills you can run anytime — the same ones used in production marketing systems
+
+This is the same foundation that teams in the full programme build in Week 1. You're already there.
+
+### Personalized onboarding
+
+Every programme participant completes an intake that captures their role, experience level, tool stack, and goals. The programme adapts to you — a Level 2 designer gets different weekly focus than a Level 5 marketing ops lead. Your first skills are mapped from your actual repeatable processes, not generic templates.
+
+**Ready to go further?** [GTM Engineer School](https://www.gtm-engineer-school.com/) · [Book a call](https://cal.com/matteo-titta/30min)
 
 For feedback or more, DM Matteo on [LinkedIn](https://www.linkedin.com/in/matteo-titta/).
 
