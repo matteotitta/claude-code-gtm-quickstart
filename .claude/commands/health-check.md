@@ -60,6 +60,29 @@ List all non-README files in the `marketing/` folder tree.
 If files exist, show them organized by subfolder.
 If empty: "Marketing: No deliverables yet — these will populate as you run skills"
 
+### 6. Knowledge quality
+
+Check the health of context files beyond just their existence.
+
+**Freshness:** For each file in `context/` (excluding README.md), parse the MMYY date prefix. Compare against today's date:
+- Files < 90 days old: "✓ Fresh"
+- Files 90-180 days old: "⚠ Stale — consider refreshing"
+- Files > 180 days old: "✗ Expired — likely outdated, re-run the skill"
+
+Show as a table:
+| File | Date | Age | Status |
+|------|------|-----|--------|
+| ... | ... | ... | ✓ Fresh / ⚠ Stale / ✗ Expired |
+
+**Coverage gaps:** Check if these key context types exist in `context/` (by filename pattern):
+- Company context (`*company-context*`)
+- At least 1 competitor profile (`*competitor*`)
+- ICP research (`*icp*`)
+
+Report missing types as: "⚠ Missing [type] — run /[skill] to generate"
+
+**Orphans:** Check if any context files are NOT mentioned in the "Related context" section of any other file in the workspace. Flag orphaned files as: "ℹ [filename] — not referenced by any other file"
+
 ## Summary
 
 End with a summary:
@@ -70,5 +93,6 @@ End with a summary:
 - Agents: [X/2 available]
 - Context outputs: [count] files
 - Marketing outputs: [count] files
+- Knowledge quality: [X fresh / Y stale / Z expired] | [gaps if any]
 
 [Suggest next action based on what's missing]"

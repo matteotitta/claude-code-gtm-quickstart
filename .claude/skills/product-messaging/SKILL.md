@@ -581,6 +581,18 @@ Example:
 | # | URL | Content Type | Access Date |
 |---|-----|--------------|-------------|
 | 1 | [URL] | [Type] | [Date] |
+
+---
+
+## Related context
+
+**Built from:**
+- `marketing/product-marketing/MMYY-positioning.md` (positioning strategy)
+- `context/MMYY-icp-research.md` (persona pain points)
+- `context/MMYY-competitor-*.md` (competitive differentiation)
+
+**Feeds into:**
+- Landing page copy, sales assets, all content outputs
 ```
 
 ---

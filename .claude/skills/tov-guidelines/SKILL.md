@@ -625,6 +625,18 @@ After using these guidelines, consider:
 
 **Potential improvements:**
 - [Auto-captured]
+
+---
+
+## Related context
+
+**Built from:**
+- `context/MMYY-company-context.md` (company identity)
+- Existing content samples
+
+**Feeds into:**
+- All content outputs (LinkedIn, newsletter, thought leadership)
+- `marketing/product-marketing/MMYY-product-messaging.md` (messaging tone)
 ```
 
 ---

@@ -576,6 +576,17 @@ After reviewing this output, consider:
 
 **Suggested skill updates:**
 - [Auto-captured based on output]
+
+---
+
+## Related context
+
+**Built from:**
+- `context/MMYY-company-context.md` (company identity)
+- `marketing/brand/MMYY-tov-guidelines.md` (voice and tone)
+
+**Feeds into:**
+- All marketing outputs (brand consistency)
 ```
 
 ---

@@ -492,3 +492,16 @@ Include deep-dives for company segments, personas (Champion and Economic Buyer e
 - [ ] All evidence includes URL and access date
 - [ ] Confidence levels assigned to all key data
 - [ ] Data gaps documented with follow-up suggestions
+
+---
+
+## Related context
+
+**Built from:**
+- `context/MMYY-company-context.md` (company profile)
+- `context/MMYY-competitor-*.md` (market context)
+
+**Feeds into:**
+- `marketing/product-marketing/MMYY-positioning.md` (targeting)
+- `marketing/product-marketing/MMYY-product-messaging.md` (persona-specific messaging)
+- `marketing/content/MMYY-content-strategy.md` (audience-aligned content)

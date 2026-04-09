@@ -2,6 +2,14 @@
 
 This folder holds outputs from the context engineering loop. These files are your persistent knowledge base — every skill you run draws from them.
 
+## Why this folder matters
+
+Every skill in the system compresses the layer below it. 15 sales calls compress into 1 ICP brief. 3 competitor profiles compress into 1 positioning doc. 1 positioning framework generates messaging for every persona. The `context/` folder is where that raw material lives — the foundation everything else distills from.
+
+Think of `context/` as your hard drive and `marketing/` as your RAM. Context is foundational research you built once and reference when needed. Marketing is the operational outputs you work from daily. Your positioning doc doesn't re-read 50 competitor pages — it synthesizes the patterns. Keep the layers separate so the system stays navigable.
+
+This is also why context engineering beats prompt engineering. The best prompt in the world can't compress 15 sales calls into patterns. But if you've already compressed them into an ICP brief sitting here, even a simple prompt gets great output.
+
 ## What goes here
 
 | Skill | Output | Example filename |

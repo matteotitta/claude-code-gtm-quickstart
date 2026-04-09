@@ -723,6 +723,20 @@ After reviewing this strategy, consider:
 1. "Should I create the LinkedIn content calendar for Month 1?"
 2. "Want me to develop the podcast/YouTube episode plan?"
 3. "Should I expand any content pillar with more topic ideas?"
+
+---
+
+## Related context
+
+**Built from:**
+- `marketing/product-marketing/MMYY-positioning.md` (positioning pillars)
+- `marketing/product-marketing/MMYY-product-messaging.md` (messaging themes)
+- `context/MMYY-icp-research.md` (audience channels and topics)
+
+**Feeds into:**
+- `marketing/content/social/` (social content calendar)
+- `marketing/content/newsletter/` (newsletter topics)
+- `marketing/content/thought-leadership/` (thought leadership pieces)
 ```
 
 ---

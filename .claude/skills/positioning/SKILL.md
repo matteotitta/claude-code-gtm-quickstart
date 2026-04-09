@@ -902,6 +902,19 @@ Each primary anchor type demands a different evidence strategy.
 | # | URL | Content Type | Access Date |
 |---|-----|--------------|-------------|
 | 1 | [Homepage URL] | Homepage | [Date] |
+
+---
+
+## Related context
+
+**Built from:**
+- `context/MMYY-company-context.md` (company strengths)
+- `context/MMYY-competitor-*.md` (competitive landscape)
+- `context/MMYY-icp-research.md` (audience priorities)
+
+**Feeds into:**
+- `marketing/product-marketing/MMYY-product-messaging.md` (messaging executes positioning)
+- `marketing/content/MMYY-content-strategy.md` (content pillars align to positioning)
 ```
 
 ---

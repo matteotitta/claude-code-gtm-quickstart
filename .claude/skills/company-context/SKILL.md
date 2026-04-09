@@ -498,6 +498,18 @@ After reviewing this context, consider:
 
 **Potential improvements:**
 - [Auto-captured]
+
+---
+
+## Related context
+
+**Built from:**
+- Company website, public sources
+
+**Feeds into:**
+- `context/MMYY-competitor-*.md` (competitive research needs company baseline)
+- `context/MMYY-icp-research.md` (ICP research needs company understanding)
+- `marketing/product-marketing/MMYY-positioning.md` (positioning anchors from company strengths)
 ```
 
 ---

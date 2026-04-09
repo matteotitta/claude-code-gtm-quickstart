@@ -668,6 +668,18 @@ Many company names are ambiguous. Common issues:
 
 | Dimension | Claim or gap | Why unverified | Follow-up action |
 |-----------|--------------|----------------|------------------|
+
+---
+
+## Related context
+
+**Built from:**
+- `context/MMYY-company-context.md` (comparison baseline)
+- Competitor website, public sources
+
+**Feeds into:**
+- `marketing/product-marketing/MMYY-positioning.md` (differentiation)
+- `marketing/product-marketing/MMYY-product-messaging.md` (competitive alternatives)
 ```
 
 [See full output template in Process section above for detailed structure per dimension]
