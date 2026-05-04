@@ -1,101 +1,153 @@
-# Claude Code for GTM — Context
+# Marketing Quick Start v2 — repo context
 
-<!-- Run /quickstart to personalize this file for your company -->
+Welcome. This is the repo-level context loaded into every Claude Code session running in this Quick Start. It explains how the repo is laid out, where to look for what, and where the personalized workspace context lives (spoiler: not here — it lives at [`marketing/CLAUDE.md`](./marketing/CLAUDE.md)).
 
-## Who I am
+If this is your first session, run `/quickstart` to personalize the workspace.
 
-<!-- QUICKSTART: This section gets personalized when you run /quickstart -->
+If you don't use Claude Code, see [INSTALL.md](./INSTALL.md) for Cowork and claude.ai install paths.
 
-I'm a marketing operator building my company's GTM context system.
+---
 
-## Your role
+## Two CLAUDE.md files — what's the difference
 
-You are an embedded GTM strategist and marketing operator. Act as a skilled B2B marketer with deep expertise in:
+| File | Loaded into every session | Purpose |
+|---|---|---|
+| `/CLAUDE.md` (this file) | yes (always) | Repo-level meta — what's shipped, where things live, Pattern A explained |
+| `/marketing/CLAUDE.md` | yes (when working under `marketing/`) | **Your personalized workspace context** — your company, voice, ICP, canonical references to your skill outputs |
 
-- Product marketing, positioning, and messaging
-- Competitive research and analysis
-- ICP research and persona development
-- Content strategy and execution
-- Brand voice and tone of voice
+The `/quickstart` command personalizes `marketing/CLAUDE.md` (not this file). This file is the same for every user.
 
-## Voice and style
+---
 
-<!-- QUICKSTART: This section gets personalized when you run /quickstart -->
+## What ships in this Quick Start
 
-### Tone
+A lean starter pack — 14 skills + 12 agents + 15 commands. No hooks, no rules, no meta/orchestration. The full taxonomy stays gated for the paid/advanced tier (see [genesysgrowth.com](https://genesysgrowth.com)).
 
-- **Operator-first** — direct, action-oriented language
-- **Clear and specific** — no vague claims or filler
-- **Evidence-based** — every claim backed by research or marked as estimated
+### Skills (14)
 
-### Formatting rules
+| Category | Skills |
+|---|---|
+| Research (5) | `company-context`, `competitor-research`, `icp-research`, `tov-guidelines`, `brand-kit` |
+| PMM strategy + execution (5) | `positioning`, `messaging`, `product-launch`, `case-study`, `webinar` |
+| Content (4) | `content-strategy`, `content-ops`, `content-audit`, `thought-leadership` |
 
-- Sentence case for all titles and bullets (never Title Case)
-- Short, punchy sentences with occasional longer explanatory ones
-- Em dashes with spaces (" — ") used sparingly
+Each skill lives at a path under `.claude/skills/` (research/ and primitives/ subfolders). The skill folder contains a `SKILL.md` (the prompt) and often a `references/` subfolder (templates, output formats, examples).
 
-## Competitive landscape
+### Agents (12)
 
-<!-- QUICKSTART: This section gets personalized when you run /quickstart -->
+Three role-agents (`researcher`, `pmm`, `content`) + nine specialists (`market-researcher`, `competitor-researcher`, `brand-researcher`, `content-researcher`, `positioning-strategist`, `product-marketer`, `content-strategist`, `content-marketer`, `content-writer`).
 
-Competitors will be listed here after you run /quickstart.
+Role-agents are dispatch routers. Specialists are tuned executors invoked when narrow expertise is needed.
 
-## Critical rules
+### Commands (15)
+
+`/quickstart` (onboarding) + one slash command per shipped skill. Type `/` in the Claude Code chat to see them all.
+
+---
+
+## Pattern A — the folder convention
+
+`marketing/` follows Pattern A: a single workspace organized by knowledge type, not by lifecycle stage. Every skill output routes to a specific subfolder.
+
+```
+marketing/
+├── CLAUDE.md           ← workspace context (personalized via /quickstart)
+├── latest.md           ← ≤500-word delta cache (manual update)
+├── history.md          ← append-only ops record (manual update)
+├── docs/               ← briefs, transcripts, source material, misc skill outputs
+├── icp/                ← /icp-research output
+├── positioning/        ← /positioning output
+├── messaging/          ← /messaging output
+├── competitors/        ← /competitor-research output (one file per competitor + aggregate)
+├── brand/              ← /brand-guidelines + /tov-guidelines outputs
+├── goals/              ← KPIs (manual; read FIRST before producing any output)
+└── content/            ← content lane with audit/strategy/execution sub-pattern
+    ├── audit/          ← /content-audit output
+    ├── strategy/       ← /content-strategy + /content-ops outputs
+    └── execution/      ← /thought-leadership output (and other content drafts)
+```
+
+**Naming convention:** `MMYY-topic.md` for all skill outputs (e.g., `0526-icp-research.md` for May 2026 ICP research). System files (`CLAUDE.md`, `latest.md`, `history.md`, `README.md`) are exempt.
+
+**Versioning:** when iterating within the same month, append `-v2`, `-v3` (e.g., `0526-positioning-v2.md`). New month = new MMYY prefix.
+
+---
+
+## How a session should run
+
+1. **Open the repo in Claude Code** — `claude` in the terminal from the repo root
+2. **Run `/quickstart` once on first install** — personalizes `marketing/CLAUDE.md`, scaffolds Pattern A folders if missing, runs a verification test
+3. **Run skills as needed** — `/company-context`, `/positioning`, etc. Each saves output to the right `marketing/` subfolder
+4. **Update `marketing/latest.md` after non-trivial work** — manual; the file is a 500-word delta cache so future sessions know "what state are we in"
+5. **Append to `marketing/history.md` after non-trivial work** — manual; append-only audit trail
+
+There is no auto-orchestration in the Quick Start. Skills run when you invoke them. Outputs save where you (or the skill's prompt) tell Claude to save them.
+
+---
+
+## Voice + quality conventions (apply to all outputs)
+
+These are the conventions baked into shipped skill prompts and agent prose. They're loaded automatically because they appear in many skill SKILL.md files — but documenting them here for visibility:
 
 ### DO
 
-- Pull context from the `context/` folder before producing any deliverable
-- Use confidence levels on research: High (verified), Medium (single source), Low (inferred)
+- Pull context from `marketing/CLAUDE.md` and relevant skill outputs (the canonical references table) before producing any deliverable
+- Use confidence levels on research: `[VERIFIED: source]`, `[INFERRED: from X + Y]`, `[ESTIMATED: reasoning]`, `[UNAVAILABLE]`
 - Include source citations with URLs and access dates
-- Mark missing data as "not available" rather than inventing content
-- Save outputs to the correct folder (see Output Routing below)
+- Mark missing data as `[UNAVAILABLE]` rather than inventing content
+- Save outputs to the correct folder per Pattern A
 
 ### DON'T
 
-- Use corporate buzzwords: "innovative", "solutions", "leverage", "synergy", "cutting-edge"
-- Invent testimonials, metrics, or quotes — mark as "not available" if missing
+- Use corporate buzzwords: "innovative", "leverage", "synergy", "cutting-edge", "best-in-class", "next-generation", "disrupt", "empower", bare "solutions"
+- Invent testimonials, metrics, or quotes — mark as `[UNAVAILABLE]` if missing
 - Fabricate financial data, revenue figures, or funding amounts
 - Skip source attribution on research claims
 - Add excessive preamble or postamble to outputs
 
-## Output routing
+### Formatting
 
-When a skill produces output, save it to the correct folder:
+- Sentence case for all titles and bullets (never Title Case)
+- Em dashes with spaces (` — `) used sparingly
+- Short, punchy sentences with occasional longer explanatory ones
+- Contractions used freely ("I'm", "you're", "it's")
 
-| Skill | Output path | Naming |
-|-------|------------|--------|
-| /company-context | `context/` | `MMYY-company-context.md` |
-| /competitor-research | `context/` | `MMYY-competitor-[name].md` |
-| /icp-research | `context/` | `MMYY-icp-research.md` |
-| /positioning | `marketing/product-marketing/` | `MMYY-positioning.md` |
-| /product-messaging | `marketing/product-marketing/` | `MMYY-product-messaging.md` |
-| /tov-guidelines | `marketing/brand/` | `MMYY-tov-guidelines.md` |
-| /brand-guidelines | `marketing/brand/` | `MMYY-brand-guidelines.md` |
-| /content-strategy | `marketing/content/` | `MMYY-content-strategy.md` |
-| /steal | `marketing/swipe-file/` | `MMYY-[source]-[pattern].md` |
+---
 
-**File naming:** `MMYY-topic.md` where MM = month (01-12), YY = year (26 = 2026).
+## What's NOT here
 
-## Workspace structure
+The following capabilities stay gated:
 
-```
-context/           → Foundational research (company, competitors, ICP)
-marketing/
-├── product-marketing/    → Positioning, messaging, pricing
-├── demand-gen/
-│   ├── paid-marketing/   → Ad campaigns, creative briefs
-│   └── lifecycle-marketing/ → Email sequences, nurture flows
-├── content/
-│   ├── newsletter/       → Newsletter drafts
-│   ├── social/           → LinkedIn posts, social campaigns
-│   └── thought-leadership/ → Long-form articles, POV pieces
-├── brand/                → TOV, brand guidelines
-└── swipe-file/           → Stolen patterns, frameworks, inspiration
-```
+- All `primitives/clients/` (discovery, onboarding, proposal, sales-call-playbook)
+- All `primitives/social/` (18 LinkedIn/YouTube/newsletter skills)
+- All `primitives/sales-enablement/` (battlecards, sales-deck, demo-script, one-pager, sales-tracks)
+- All `primitives/lifecycle/` (email-nurture, lifecycle campaigns)
+- All `primitives/outbound/` (cold email, ABM, lead scoring, list building, enrichment)
+- All `primitives/paid-marketing/` (Google Ads, LinkedIn Ads, ad creative, paid strategy/audit)
+- All `primitives/seo-aeo/` (AEO content/strategy, programmatic SEO, local SEO)
+- All `primitives/website/` (wireframe, copy, full builds, audits, scoring)
+- All `primitives/design/` (vibe coding, dashboards, Figma → React)
+- All `meta/*` (orchestration, learning, session, catalog, infra — including `/orchestrator`, `/recall`, `/today`, `/wiki`, `/weekly-audit`, `/new-client`)
+- All hooks (no automated catalog regen, output routing, naming enforcement, session indexing)
+- All rules (Pattern A is documented inline in this CLAUDE.md instead of auto-loaded from a rule file)
 
-## Key URLs
+If you want any of those, see the advanced tier at [genesysgrowth.com](https://genesysgrowth.com).
 
-<!-- QUICKSTART: This section gets personalized when you run /quickstart -->
+---
 
-- Website: [your website here]
-- Booking: [your booking link here]
+## File map (top of repo)
+
+| Path | Purpose |
+|---|---|
+| `CLAUDE.md` (this file) | Repo-level always-loaded context |
+| `README.md` | First-time install + setup walkthrough |
+| `INSTALL.md` | Multi-runtime install guide (Claude Code, Cowork, claude.ai) |
+| `MIGRATION.md` | v1 → v2 port instructions (for users on the old `marketing/{brand,content,demand-gen,...}/` layout) |
+| `marketing/` | The Pattern A workspace |
+| `.claude/skills/` | 14 shipped skills (research/ + primitives/) |
+| `.claude/agents/` | 12 shipped agents (3 role-agents + 9 specialists) |
+| `.claude/commands/` | 15 shipped slash commands |
+| `scripts/` | Sync script (re-pull from upstream master) + sanitize-check |
+| `templates/` | CLAUDE.md and SKILL.md templates if you want to author your own |
+| `docs/`, `examples/`, `context/` | v1 leftovers — being cleaned up; safe to delete if empty |
+| `FAQ.md`, `SETUP-GUIDE.md` | v1 documentation — kept until v2 README absorbs them |
