@@ -14,4 +14,4 @@ Content lane organized by stage: audit (assess current state), strategy (plan wh
 
 **Skills that route here:** `/content-audit` → `audit/`, `/content-strategy` + `/content-ops` → `strategy/`, `/thought-leadership` → `execution/`.
 
-This is the same audit/strategy/execution sub-pattern Pattern A applies to every execution lane (lifecycle, paid, sales, website — all gated in this Quick Start).
+This is the same audit/strategy/execution sub-pattern the marketing/ folder convention applies to every execution lane (lifecycle, paid, sales, website — all gated in this Quick Start).

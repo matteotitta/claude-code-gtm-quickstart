@@ -1,6 +1,6 @@
 # Marketing — workspace context
 
-This is your marketing team's workspace. Every skill output lands here, organized by Pattern A — a folder convention where each subfolder maps to a knowledge type (ICP, positioning, messaging, brand, etc.) and each output file follows the `MMYY-topic.md` naming convention.
+This is your marketing team's workspace. Every skill output lands here, organized by the marketing/ folder convention — a folder convention where each subfolder maps to a knowledge type (ICP, positioning, messaging, brand, etc.) and each output file follows the `MMYY-topic.md` naming convention.
 
 ## Your team
 

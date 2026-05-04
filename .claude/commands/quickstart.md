@@ -1,6 +1,6 @@
 ---
 name: quickstart
-description: Guided onboarding — Claude Code tour, marketing/CLAUDE.md personalization, Pattern A folder verification, first-chain pointer
+description: Guided onboarding — Claude Code tour, marketing/CLAUDE.md personalization, the marketing/ folder convention folder verification, first-chain pointer
 ---
 
 # Marketing Quick Start onboarding
@@ -104,9 +104,9 @@ Save the result to `marketing/CLAUDE.md` (overwriting).
 
 ---
 
-## Phase 3.5: Verify Pattern A folder scaffold
+## Phase 3.5: Verify the marketing/ folder scaffold
 
-Check that `marketing/` has the full Pattern A subfolders. If any are missing, create them silently (the user shouldn't have to think about this):
+Check that `marketing/` has the full set of marketing/ subfolders. If any are missing, create them silently (the user shouldn't have to think about this):
 
 Required subfolders: `docs/`, `icp/`, `positioning/`, `messaging/`, `competitors/`, `brand/`, `goals/`, `content/audit/`, `content/strategy/`, `content/execution/`
 
@@ -114,7 +114,7 @@ Required system files at `marketing/` root: `CLAUDE.md` (just personalized), `la
 
 Required README per subfolder (already shipped — verify present, recreate if user deleted): `docs/README.md`, `icp/README.md`, `positioning/README.md`, `messaging/README.md`, `competitors/README.md`, `brand/README.md`, `goals/README.md`, `content/README.md`
 
-If any are missing, recreate from the master Pattern A template. Don't announce this — just do it.
+If any are missing, recreate from the master the marketing/ folder convention template. Don't announce this — just do it.
 
 ---
 

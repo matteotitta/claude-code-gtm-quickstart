@@ -31,7 +31,7 @@ This pack works on three Claude runtimes. Pick the one you have access to and fo
    /quickstart
    ```
 
-   Claude will ask for your company name, voice preferences, and key URLs, then auto-create the `marketing/` Pattern A folders (`icp/`, `positioning/`, `messaging/`, `competitors/`, `brand/`, `goals/`, `content/{audit,strategy,execution}/`) with placeholder files.
+   Claude will ask for your company name, voice preferences, and key URLs, then auto-create the `marketing/` marketing/ folders (`icp/`, `positioning/`, `messaging/`, `competitors/`, `brand/`, `goals/`, `content/{audit,strategy,execution}/`) with placeholder files.
 
 ### Verify it works
 
@@ -124,7 +124,7 @@ This is a starter pack. The following stay gated for the paid/advanced tier:
 - All lifecycle (email nurture, lifecycle campaigns)
 - All meta/orchestration (`/orchestrator`, `/recall`, `/today`, `/wiki`, `/weekly-audit`, etc.)
 - All hooks (no automated catalog regen, output routing, naming enforcement)
-- All rules (Pattern A convention is taught inline in this pack's CLAUDE.md instead)
+- All rules (the marketing/ folder convention convention is taught inline in this pack's CLAUDE.md instead)
 
 If you want any of those, see [genesysgrowth.com](https://genesysgrowth.com) for the advanced tier.
 

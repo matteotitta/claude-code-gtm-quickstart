@@ -12,7 +12,7 @@ If you don't use Claude Code, see [INSTALL.md](./INSTALL.md) for Cowork and clau
 
 | File | Loaded into every session | Purpose |
 |---|---|---|
-| `/CLAUDE.md` (this file) | yes (always) | Repo-level meta — what's shipped, where things live, Pattern A explained |
+| `/CLAUDE.md` (this file) | yes (always) | Repo-level meta — what's shipped, where things live, the marketing/ folder convention explained |
 | `/marketing/CLAUDE.md` | yes (when working under `marketing/`) | **Your personalized workspace context** — your company, voice, ICP, canonical references to your skill outputs |
 
 The `/quickstart` command personalizes `marketing/CLAUDE.md` (not this file). This file is the same for every user.
@@ -45,9 +45,9 @@ Role-agents are dispatch routers. Specialists are tuned executors invoked when n
 
 ---
 
-## Pattern A — the folder convention
+## The marketing/ folder convention
 
-`marketing/` follows Pattern A: a single workspace organized by knowledge type, not by lifecycle stage. Every skill output routes to a specific subfolder.
+`marketing/` is a single workspace organized by knowledge type, not by lifecycle stage. Every skill output routes to a specific subfolder.
 
 ```
 marketing/
@@ -76,7 +76,7 @@ marketing/
 ## How a session should run
 
 1. **Open the repo in Claude Code** — `claude` in the terminal from the repo root
-2. **Run `/quickstart` once on first install** — personalizes `marketing/CLAUDE.md`, scaffolds Pattern A folders if missing, runs a verification test
+2. **Run `/quickstart` once on first install** — personalizes `marketing/CLAUDE.md`, scaffolds marketing/ folders if missing, runs a verification test
 3. **Run skills as needed** — `/company-context`, `/positioning`, etc. Each saves output to the right `marketing/` subfolder
 4. **Update `marketing/latest.md` after non-trivial work** — manual; the file is a 500-word delta cache so future sessions know "what state are we in"
 5. **Append to `marketing/history.md` after non-trivial work** — manual; append-only audit trail
@@ -95,7 +95,7 @@ These are the conventions baked into shipped skill prompts and agent prose. They
 - Use confidence levels on research: `[VERIFIED: source]`, `[INFERRED: from X + Y]`, `[ESTIMATED: reasoning]`, `[UNAVAILABLE]`
 - Include source citations with URLs and access dates
 - Mark missing data as `[UNAVAILABLE]` rather than inventing content
-- Save outputs to the correct folder per Pattern A
+- Save outputs to the correct folder per the marketing/ folder convention
 
 ### DON'T
 
@@ -129,7 +129,7 @@ The following capabilities stay gated:
 - All `primitives/design/` (vibe coding, dashboards, Figma → React)
 - All `meta/*` (orchestration, learning, session, catalog, infra — including `/orchestrator`, `/recall`, `/today`, `/wiki`, `/weekly-audit`, `/new-client`)
 - All hooks (no automated catalog regen, output routing, naming enforcement, session indexing)
-- All rules (Pattern A is documented inline in this CLAUDE.md instead of auto-loaded from a rule file)
+- All rules (the marketing/ folder convention is documented inline in this CLAUDE.md instead of auto-loaded from a rule file)
 
 If you want any of those, see the advanced tier at [genesysgrowth.com](https://genesysgrowth.com).
 
@@ -143,7 +143,7 @@ If you want any of those, see the advanced tier at [genesysgrowth.com](https://g
 | `README.md` | First-time install + setup walkthrough |
 | `INSTALL.md` | Multi-runtime install guide (Claude Code, Cowork, claude.ai) |
 | `MIGRATION.md` | v1 → v2 port instructions (for users on the old `marketing/{brand,content,demand-gen,...}/` layout) |
-| `marketing/` | The Pattern A workspace |
+| `marketing/` | The marketing/ workspace |
 | `.claude/skills/` | 14 shipped skills (research/ + primitives/) |
 | `.claude/agents/` | 12 shipped agents (3 role-agents + 9 specialists) |
 | `.claude/commands/` | 15 shipped slash commands |

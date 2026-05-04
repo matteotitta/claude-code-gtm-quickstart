@@ -2,7 +2,7 @@
 
 A lean, opinionated starter pack for marketing teams running their GTM in Claude Code, Cowork, or claude.ai Projects.
 
-**14 skills · 12 agents · 15 commands · single `marketing/` Pattern A workspace.**
+**14 skills · 12 agents · 15 commands · single `marketing/` workspace.**
 
 Built by [Matteo Tittarelli](https://genesysgrowth.com) (Genesys Growth) for in-house marketing teams who want a working starting point — not a 100-skill kitchen sink.
 
@@ -36,7 +36,7 @@ Then in the Claude Code chat:
 /quickstart
 ```
 
-This personalizes `marketing/CLAUDE.md` with your company name, voice, and ICP, then verifies the Pattern A folder scaffold. Five minutes.
+This personalizes `marketing/CLAUDE.md` with your company name, voice, and ICP, then verifies the marketing/ folder scaffold. Five minutes.
 
 For Cowork or claude.ai paths, see [`INSTALL.md`](./INSTALL.md).
 
@@ -65,7 +65,7 @@ Each skill ships with a `SKILL.md` (the prompt) and usually a `references/` fold
 
 ---
 
-## The Pattern A workspace
+## The marketing/ folder convention
 
 Your skill outputs land in `marketing/` — a single workspace organized by knowledge type, not by lifecycle stage.
 
@@ -89,7 +89,7 @@ marketing/
 
 **Naming:** `MMYY-topic.md` (e.g., `0526-icp-research.md`). System files (`CLAUDE.md`, `latest.md`, `history.md`, `README.md`) are exempt.
 
-Full Pattern A docs live in [`CLAUDE.md`](./CLAUDE.md). Each `marketing/{folder}/` ships with its own `README.md` explaining what goes inside.
+Full folder convention docs live in [`CLAUDE.md`](./CLAUDE.md). Each `marketing/{folder}/` ships with its own `README.md` explaining what goes inside.
 
 ---
 
@@ -125,7 +125,7 @@ This Quick Start is intentionally lean. The following stay gated for the paid/ad
 - All lifecycle (email nurture, lifecycle campaigns)
 - All meta/orchestration (`/orchestrator`, `/recall`, `/today`, `/wiki`, `/weekly-audit`)
 - All hooks (no auto-validation, no catalog regen, no output routing)
-- All rules (Pattern A taught inline in this pack instead of auto-loaded from a rule file)
+- All rules (taught inline in this pack instead of auto-loaded from a rule file)
 
 If you want any of those, see the advanced tier at [genesysgrowth.com](https://genesysgrowth.com).
 
@@ -139,7 +139,7 @@ If you want any of those, see the advanced tier at [genesysgrowth.com](https://g
 ├── CLAUDE.md           ← repo-level Claude context (loaded every session)
 ├── INSTALL.md          ← multi-runtime install guide (Claude Code, Cowork, claude.ai)
 ├── MIGRATION.md        ← v1 → v2 port instructions (if you're upgrading)
-├── marketing/          ← your Pattern A workspace
+├── marketing/          ← your marketing/ workspace
 ├── .claude/
 │   ├── skills/         ← 14 skills (research/ + primitives/)
 │   ├── agents/         ← 12 agents (3 roles + 9 specialists)
@@ -153,7 +153,7 @@ If you want any of those, see the advanced tier at [genesysgrowth.com](https://g
 
 ## Upgrading from v1
 
-If you cloned the v1 quickstart (the one with `marketing/{brand,content,demand-gen,product-marketing,swipe-file}/` flat layout), see [`MIGRATION.md`](./MIGRATION.md) for the port. Short version: your old outputs map cleanly into the new Pattern A subfolders by topic, not by the v1 lifecycle category.
+If you cloned the v1 quickstart (the one with `marketing/{brand,content,demand-gen,product-marketing,swipe-file}/` flat layout), see [`MIGRATION.md`](./MIGRATION.md) for the port. Short version: your old outputs map cleanly into the new the marketing/ folder convention subfolders by topic, not by the v1 lifecycle category.
 
 ---
 

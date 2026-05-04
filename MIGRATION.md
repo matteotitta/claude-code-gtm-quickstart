@@ -2,7 +2,7 @@
 
 If you cloned the v1 quickstart (`claude-code-gtm-quickstart`), this doc explains what changed and how to port your work.
 
-> **TL;DR:** v1 organized the workspace by lifecycle category (`marketing/{brand,content,demand-gen,product-marketing,swipe-file}/`). v2 organizes by knowledge type (Pattern A: `marketing/{icp,positioning,messaging,competitors,brand,goals,content/...}/`). Same outputs, different folder structure. Plus the `.claude/` runtime got a major overhaul.
+> **TL;DR:** v1 organized the workspace by lifecycle category (`marketing/{brand,content,demand-gen,product-marketing,swipe-file}/`). v2 organizes by knowledge type (the marketing/ folder convention: `marketing/{icp,positioning,messaging,competitors,brand,goals,content/...}/`). Same outputs, different folder structure. Plus the `.claude/` runtime got a major overhaul.
 
 ---
 
@@ -31,7 +31,7 @@ marketing/
 └── swipe-file/
 ```
 
-**v2 layout** (Pattern A — organized by knowledge type):
+**v2 layout** (organized by knowledge type):
 
 ```
 marketing/
@@ -59,18 +59,18 @@ marketing/
 | Agents | 2 specialists (`competitor-researcher`, `market-researcher`) | 12 (3 role-agents + 9 specialists) |
 | Commands | 5 (`/quickstart`, `/context-loop`, `/health-check`, `/learn`, `/next-steps`) | 15 (`/quickstart` + 14 skill-aligned) |
 | Hooks | 0 | 0 (gated for paid tier) |
-| Rules | 0 | 0 (Pattern A taught inline in CLAUDE.md) |
+| Rules | 0 | 0 (taught inline in CLAUDE.md) |
 
 **Removed in v2:**
 - `/context-loop` — was a sequential skill chain. Now you run skills individually (or use `/orchestrator` in the paid tier).
 - `/health-check` — was a setup verification. Replaced by `/quickstart`'s built-in verification phase.
 - `/learn` — was a meta skill for absorbing new sources. Gated for paid tier.
 - `/next-steps` — was a session-end suggester. Replaced by the "Suggested first chain" in README + CLAUDE.md.
-- `marketing/{brand,content,demand-gen,product-marketing,swipe-file}/` — replaced by Pattern A.
+- `marketing/{brand,content,demand-gen,product-marketing,swipe-file}/` — replaced by the new folder structure.
 - Skills at flat paths (`.claude/skills/{positioning,icp-research,...}/`) — replaced by nested research/ + primitives/ structure.
 
 **Added in v2:**
-- `/quickstart` rewritten — now personalizes `marketing/CLAUDE.md` AND scaffolds Pattern A folders in one step.
+- `/quickstart` rewritten — now personalizes `marketing/CLAUDE.md` AND scaffolds marketing/ folders in one step.
 - `marketing/CLAUDE.md` — your personalized workspace context (the file `/quickstart` writes to).
 - `marketing/latest.md` and `history.md` — operational ops trail (manual updates).
 - 9 new skills: `tov-guidelines`, `brand-kit`, `messaging` (was `product-messaging`), `product-launch`, `case-study`, `webinar`, `content-strategy`, `content-ops`, `content-audit`, `thought-leadership`.
@@ -101,7 +101,7 @@ If you have a meaningful body of v1 outputs:
 
 1. Clone v2 fresh into a new folder: `git clone https://github.com/matteotitta/claude-code-marketing-quickstart.git my-marketing-v2`
 2. Run `/quickstart` in v2 to set up `marketing/CLAUDE.md`
-3. Manually move your v1 outputs into the v2 Pattern A folders per the table above
+3. Manually move your v1 outputs into the v2 marketing/ folders per the table above
 4. Update `marketing/CLAUDE.md`'s "Canonical references" table to point at your ported files
 5. Optionally: append a v1 → v2 entry to `marketing/history.md` documenting the migration date
 
@@ -127,7 +127,7 @@ To pin yourself permanently to v1, fork the repo at the v1 commit and pull from 
 
 v1 organized by **lifecycle category** (brand, content, demand-gen, product-marketing) — the way agencies often organize work. v2 organizes by **knowledge type** (icp, positioning, messaging, competitors) — the way in-house marketing teams reference their canonical facts.
 
-Pattern A turned out to be more useful in practice because:
+This convention turned out to be more useful in practice because:
 1. **Skill outputs map 1:1 to folders** — easier for both humans and Claude to find them
 2. **No category overlap confusion** — "is a webinar brief 'product-marketing' or 'demand-gen'?" goes away
 3. **Goals + KPIs get a first-class home** — `marketing/goals/` is the file every skill should read first
