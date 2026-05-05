@@ -3,7 +3,7 @@ name: content-researcher
 role: researcher
 description: Use this agent when analyzing transcripts, auditing existing content, or extracting insights and quotes from source material. Activate when user provides a transcript, recording, or wants to assess content quality. Examples: <example>"analyze this transcript"</example> <example>"audit the blog content"</example> <example>"extract key quotes from this call"</example>
 model: sonnet
-color: yellow
+color: blue
 tools: ["Read", "Write", "Glob", "Grep", "Bash", "WebFetch", "WebSearch"]
 memory: project
 skills:

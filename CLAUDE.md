@@ -1,10 +1,10 @@
-# Marketing Quick Start v2 — repo context
+# Genesys Claude Code Marketing Quickstart — repo context
 
-Welcome. This is the repo-level context loaded into every Claude Code session running in this Quick Start. It explains how the repo is laid out, where to look for what, and where the personalized workspace context lives (spoiler: not here — it lives at [`marketing/CLAUDE.md`](./marketing/CLAUDE.md)).
+Welcome. This is the repo-level context loaded into every Claude Code session running in this Quickstart. It explains how the repo is laid out, where to look for what, and where the personalized workspace context lives (spoiler: not here — it lives at [`marketing/CLAUDE.md`](./marketing/CLAUDE.md)).
 
 If this is your first session, run `/quickstart` to personalize the workspace.
 
-If you don't use Claude Code, see [INSTALL.md](./INSTALL.md) for Cowork and claude.ai install paths.
+If you don't use Claude Code, see [INSTALL.md](./INSTALL.md) for the Cowork install path.
 
 ---
 
@@ -19,19 +19,19 @@ The `/quickstart` command personalizes `marketing/CLAUDE.md` (not this file). Th
 
 ---
 
-## What ships in this Quick Start
+## What ships in this Quickstart
 
-A lean starter pack — 14 skills + 12 agents + 15 commands. No hooks, no rules, no meta/orchestration. The full taxonomy stays gated for the paid/advanced tier (see [genesysgrowth.com](https://genesysgrowth.com)).
+A lean starter pack — 11 skills + 12 agents + 13 commands. No hooks, no rules, no meta/orchestration. The full taxonomy stays gated for the advanced tier (DM me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) if interested).
 
-### Skills (14)
+### Skills (11)
 
 | Category | Skills |
 |---|---|
 | Research (5) | `company-context`, `competitor-research`, `icp-research`, `tov-guidelines`, `brand-kit` |
-| PMM strategy + execution (5) | `positioning`, `messaging`, `product-launch`, `case-study`, `webinar` |
-| Content (4) | `content-strategy`, `content-ops`, `content-audit`, `thought-leadership` |
+| PMM strategy (3) | `positioning`, `messaging`, `product-launch` |
+| Content (3) | `content-strategy`, `content-audit`, `thought-leadership` |
 
-Each skill lives at a path under `.claude/skills/` (research/ and primitives/ subfolders). The skill folder contains a `SKILL.md` (the prompt) and often a `references/` subfolder (templates, output formats, examples).
+Each skill lives at a path under `.claude/skills/` (research/ and primitives/ subfolders). The skill folder contains a `SKILL.md` (the prompt) and a `references/` subfolder (templates, output formats, worked examples on real public companies).
 
 ### Agents (12)
 
@@ -39,9 +39,9 @@ Three role-agents (`researcher`, `pmm`, `content`) + nine specialists (`market-r
 
 Role-agents are dispatch routers. Specialists are tuned executors invoked when narrow expertise is needed.
 
-### Commands (15)
+### Commands (13)
 
-`/quickstart` (onboarding) + one slash command per shipped skill. Type `/` in the Claude Code chat to see them all.
+`/quickstart` (onboarding) + 12 slash commands (one per skill, plus `/brand-kit`). Type `/` in the Claude Code chat to see them all.
 
 ---
 
@@ -59,17 +59,17 @@ marketing/
 ├── positioning/        ← /positioning output
 ├── messaging/          ← /messaging output
 ├── competitors/        ← /competitor-research output (one file per competitor + aggregate)
-├── brand/              ← /brand-guidelines + /tov-guidelines outputs
+├── brand/              ← /brand-kit + /tov-guidelines outputs
 ├── goals/              ← KPIs (manual; read FIRST before producing any output)
 └── content/            ← content lane with audit/strategy/execution sub-pattern
     ├── audit/          ← /content-audit output
-    ├── strategy/       ← /content-strategy + /content-ops outputs
+    ├── strategy/       ← /content-strategy output
     └── execution/      ← /thought-leadership output (and other content drafts)
 ```
 
 **Naming convention:** `MMYY-topic.md` for all skill outputs (e.g., `0526-icp-research.md` for May 2026 ICP research). System files (`CLAUDE.md`, `latest.md`, `history.md`, `README.md`) are exempt.
 
-**Versioning:** when iterating within the same month, append `-v2`, `-v3` (e.g., `0526-positioning-v2.md`). New month = new MMYY prefix.
+**Within-month iteration:** when iterating within the same month, append `-v2`, `-v3` (e.g., `0526-positioning-v2.md`). New month = new MMYY prefix.
 
 ---
 
@@ -81,7 +81,7 @@ marketing/
 4. **Update `marketing/latest.md` after non-trivial work** — manual; the file is a 500-word delta cache so future sessions know "what state are we in"
 5. **Append to `marketing/history.md` after non-trivial work** — manual; append-only audit trail
 
-There is no auto-orchestration in the Quick Start. Skills run when you invoke them. Outputs save where you (or the skill's prompt) tell Claude to save them.
+There is no auto-orchestration in the Quickstart. Skills run when you invoke them. Outputs save where you (or the skill's prompt) tell Claude to save them.
 
 ---
 
@@ -114,13 +114,13 @@ These are the conventions baked into shipped skill prompts and agent prose. They
 
 ---
 
-## What's NOT here
+## What's NOT shipped (gated)
 
-The following capabilities stay gated:
+The following capabilities stay gated for the advanced tier:
 
 - All `primitives/clients/` (discovery, onboarding, proposal, sales-call-playbook)
-- All `primitives/social/` (18 LinkedIn/YouTube/newsletter skills)
-- All `primitives/sales-enablement/` (battlecards, sales-deck, demo-script, one-pager, sales-tracks)
+- All `primitives/social/` (LinkedIn, YouTube, newsletter skills)
+- All `primitives/sales-enablement/` (battlecards, sales-deck, demo-script, one-pager, sales-tracks, case-study, webinar)
 - All `primitives/lifecycle/` (email-nurture, lifecycle campaigns)
 - All `primitives/outbound/` (cold email, ABM, lead scoring, list building, enrichment)
 - All `primitives/paid-marketing/` (Google Ads, LinkedIn Ads, ad creative, paid strategy/audit)
@@ -130,8 +130,9 @@ The following capabilities stay gated:
 - All `meta/*` (orchestration, learning, session, catalog, infra — including `/orchestrator`, `/recall`, `/today`, `/wiki`, `/weekly-audit`, `/new-client`)
 - All hooks (no automated catalog regen, output routing, naming enforcement, session indexing)
 - All rules (the marketing/ folder convention is documented inline in this CLAUDE.md instead of auto-loaded from a rule file)
+- Content-ops (collapsed into `/content-strategy` here; the full ops layer is gated)
 
-If you want any of those, see the advanced tier at [genesysgrowth.com](https://genesysgrowth.com).
+If you want any of those, contact me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/).
 
 ---
 
@@ -141,13 +142,11 @@ If you want any of those, see the advanced tier at [genesysgrowth.com](https://g
 |---|---|
 | `CLAUDE.md` (this file) | Repo-level always-loaded context |
 | `README.md` | First-time install + setup walkthrough |
-| `INSTALL.md` | Multi-runtime install guide (Claude Code, Cowork, claude.ai) |
-| `MIGRATION.md` | v1 → v2 port instructions (for users on the old `marketing/{brand,content,demand-gen,...}/` layout) |
-| `marketing/` | The marketing/ workspace |
-| `.claude/skills/` | 14 shipped skills (research/ + primitives/) |
+| `INSTALL.md` | Multi-runtime install guide (Claude Code, Cowork) |
+| `FAQ.md` | Common questions every team asks in week 1 |
+| `marketing/` | The marketing workspace |
+| `.claude/skills/` | 11 shipped skills (research/ + primitives/) |
 | `.claude/agents/` | 12 shipped agents (3 role-agents + 9 specialists) |
-| `.claude/commands/` | 15 shipped slash commands |
-| `scripts/` | Sync script (re-pull from upstream master) + sanitize-check |
-| `templates/` | CLAUDE.md and SKILL.md templates if you want to author your own |
-| `docs/`, `examples/`, `context/` | v1 leftovers — being cleaned up; safe to delete if empty |
-| `FAQ.md`, `SETUP-GUIDE.md` | v1 documentation — kept until v2 README absorbs them |
+| `.claude/commands/` | 13 shipped slash commands |
+| `context/` | Raw research source files (transcripts, decks, screenshots) |
+| `templates/` | CLAUDE.md and SKILL.md authoring prompts |

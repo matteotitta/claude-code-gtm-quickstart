@@ -1,7 +1,7 @@
 ---
 name: brand-researcher
 role: researcher
-description: Use this agent when extracting brand identity, visual systems, design language, or tone of voice guidelines from a company's existing presence. Activate when user needs brand kit, TOV documentation, or visual identity extraction. Examples: <example>"extract brand from [website]"</example> <example>"what's their tone of voice"</example> <example>"build brand kit for [client]"</example>
+description: Use this agent when extracting brand identity, visual systems, design language, or tone of voice guidelines from a company's existing presence. Activate when user needs brand kit, TOV documentation, or visual identity extraction. Examples: <example>"extract brand from [website]"</example> <example>"what's their tone of voice"</example> <example>"build our brand kit"</example>
 model: sonnet
 color: blue
 tools: ["Read", "Write", "Glob", "Grep", "Bash", "WebFetch", "WebSearch"]

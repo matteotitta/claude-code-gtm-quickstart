@@ -1,24 +1,56 @@
-# Marketing Quick Start v2
+# Genesys Claude Code Marketing Quickstart
 
-A lean, opinionated starter pack for marketing teams running their GTM in Claude Code, Cowork, or claude.ai Projects.
+A lean, opinionated starter pack for marketing teams running their GTM in Claude Code or Cowork.
 
-**14 skills · 12 agents · 15 commands · single `marketing/` workspace.**
+**11 skills · 12 agents · 13 commands · single `marketing/` workspace.**
 
-Built by [Matteo Tittarelli](https://genesysgrowth.com) (Genesys Growth) for in-house marketing teams who want a working starting point — not a 100-skill kitchen sink.
+Built by [Matteo Tittarelli](https://www.linkedin.com/in/matteotittarelli/) (Genesys Growth) for in-house marketing teams who want a working starting point — not a 100-skill kitchen sink.
 
 ---
 
 ## What this is
 
-Three derivatives, one source of truth:
+Two derivatives, one source of truth:
 
 | Runtime | What you install | Where the install guide lives |
 |---|---|---|
 | **Claude Code** | This repo (`git clone`) | This README + [`CLAUDE.md`](./CLAUDE.md) |
 | **Cowork** | Plugin via marketplace OR drag-zip | [`INSTALL.md`](./INSTALL.md) → Path B |
-| **claude.ai Projects** | Download zip → upload knowledge files + paste system prompt | [`INSTALL.md`](./INSTALL.md) → Path C |
 
 If you don't know which to pick, see the decision tree at the top of [`INSTALL.md`](./INSTALL.md).
+
+---
+
+## How it fits together
+
+```
+                ┌─────────────────────────────────────────────────────────────┐
+                │  marketing/  (the workspace folder — your knowledge base)   │
+                │  ├── icp/  positioning/  messaging/  competitors/  brand/   │
+                │  ├── docs/  goals/  history.md  latest.md  CLAUDE.md        │
+                │  └── content/{audit, strategy, execution}/                  │
+                └────────────────────────┬────────────────────────────────────┘
+                                         │ feeds context into
+                                         ▼
+                ┌─────────────────────────────────────────────────────────────┐
+                │  context  (CLAUDE.md + skill outputs already on disk)       │
+                │  → loaded automatically when you start a session            │
+                └────────────────────────┬────────────────────────────────────┘
+                                         │ informs
+                                         ▼
+                ┌─────────────────────────────────────────────────────────────┐
+                │  skills  (11 prompts in .claude/skills/)                    │
+                │  invoked via slash commands → /icp-research, /positioning…  │
+                └────────────────────────┬────────────────────────────────────┘
+                                         │ produces
+                                         ▼
+                ┌─────────────────────────────────────────────────────────────┐
+                │  artifacts / outputs  (saved as MMYY-topic.md back into     │
+                │  marketing/{folder}/ — closing the loop)                    │
+                └─────────────────────────────────────────────────────────────┘
+```
+
+**The loop:** your `marketing/` folder holds your work. Every Claude Code session loads it as context. You invoke skills via slash commands. Skill outputs save back into `marketing/{folder}/` — building up the context for the next run.
 
 ---
 
@@ -36,32 +68,9 @@ Then in the Claude Code chat:
 /quickstart
 ```
 
-This personalizes `marketing/CLAUDE.md` with your company name, voice, and ICP, then verifies the marketing/ folder scaffold. Five minutes.
+This personalizes `marketing/CLAUDE.md` with your company name, voice, and ICP, then verifies the `marketing/` folder scaffold. Five minutes.
 
-For Cowork or claude.ai paths, see [`INSTALL.md`](./INSTALL.md).
-
----
-
-## What's inside
-
-### 14 skills
-
-| Category | Skills |
-|---|---|
-| **Research** (5) | `company-context` · `competitor-research` · `icp-research` · `tov-guidelines` · `brand-kit` |
-| **PMM strategy + execution** (5) | `positioning` · `messaging` · `product-launch` · `case-study` · `webinar` |
-| **Content** (4) | `content-strategy` · `content-ops` · `content-audit` · `thought-leadership` |
-
-Each skill ships with a `SKILL.md` (the prompt) and usually a `references/` folder (templates, output formats, worked examples on real public companies like Vercel, Cursor, OpenAI, Perplexity). Skills live under `.claude/skills/`.
-
-### 12 agents
-
-- **Role-agents** (3): `researcher`, `pmm`, `content` — dispatch routers
-- **Specialists** (9): `market-researcher`, `competitor-researcher`, `brand-researcher`, `content-researcher`, `positioning-strategist`, `product-marketer`, `content-strategist`, `content-marketer`, `content-writer` — tuned executors invoked when narrow expertise is needed
-
-### 15 commands
-
-`/quickstart` (onboarding) + 14 skill-aligned commands (`/positioning`, `/messaging`, etc.). Type `/` in Claude Code chat to see them all.
+For Cowork, see [`INSTALL.md`](./INSTALL.md).
 
 ---
 
@@ -79,17 +88,40 @@ marketing/
 ├── positioning/        ← /positioning output
 ├── messaging/          ← /messaging output
 ├── competitors/        ← /competitor-research output
-├── brand/              ← /brand-guidelines + /tov-guidelines
+├── brand/              ← /brand-kit + /tov-guidelines
 ├── goals/              ← KPIs (manual)
 └── content/
     ├── audit/          ← /content-audit
-    ├── strategy/       ← /content-strategy + /content-ops
+    ├── strategy/       ← /content-strategy
     └── execution/      ← /thought-leadership
 ```
 
 **Naming:** `MMYY-topic.md` (e.g., `0526-icp-research.md`). System files (`CLAUDE.md`, `latest.md`, `history.md`, `README.md`) are exempt.
 
 Full folder convention docs live in [`CLAUDE.md`](./CLAUDE.md). Each `marketing/{folder}/` ships with its own `README.md` explaining what goes inside.
+
+---
+
+## What's inside
+
+### 11 skills
+
+| Category | Skills |
+|---|---|
+| **Research** (5) | `company-context` · `competitor-research` · `icp-research` · `tov-guidelines` · `brand-kit` |
+| **PMM strategy** (3) | `positioning` · `messaging` · `product-launch` |
+| **Content** (3) | `content-strategy` · `content-audit` · `thought-leadership` |
+
+Each skill ships with a `SKILL.md` (the prompt) and a `references/` folder (templates, output formats, worked examples on real public companies — Linear, Vercel, Cursor, Lovable, Perplexity, Notion, Strapi, Gamma, Sierra). Skills live under `.claude/skills/`.
+
+### 12 agents
+
+- **Role-agents** (3): `researcher`, `pmm`, `content` — dispatch routers
+- **Specialists** (9): `market-researcher`, `competitor-researcher`, `brand-researcher`, `content-researcher`, `positioning-strategist`, `product-marketer`, `content-strategist`, `content-marketer`, `content-writer` — tuned executors invoked when narrow expertise is needed
+
+### 13 commands
+
+`/quickstart` (onboarding) + 11 skill-aligned commands (`/positioning`, `/messaging`, `/brand-kit`, etc.) + `/content-audit`. Type `/` in Claude Code chat to see them all.
 
 ---
 
@@ -101,7 +133,7 @@ After `/quickstart` finishes, run these in order:
 2. `/competitor-research` — top 2-3 competitors, run one-by-one
 3. `/icp-research` — define your ideal customer
 4. `/tov-guidelines` — extract or define your tone of voice
-5. `/brand-guidelines` — capture your visual identity
+5. `/brand-kit` — capture your visual identity
 6. `/positioning` — synthesize the above into a positioning statement
 7. `/messaging` — turn positioning into the 10-component messaging library
 8. `/content-strategy` — map messaging to a content roadmap
@@ -113,21 +145,22 @@ Each command saves output to a folder under `marketing/`.
 
 ## What's NOT shipped (gated)
 
-This Quick Start is intentionally lean. The following stay gated for the paid/advanced tier:
+This Quickstart is intentionally lean. The following stay gated for the advanced tier:
 
-- All sales-enablement (battlecards, sales decks, demo scripts, one-pagers)
+- All sales-enablement (battlecards, sales decks, demo scripts, one-pagers, case studies, webinars)
 - All outbound (cold email, ABM, lead scoring, enrichment)
 - All paid marketing (Google Ads, LinkedIn Ads, creative briefs)
 - All SEO/AEO (AEO content + strategy, programmatic SEO, local SEO)
 - All website (wireframe, copy, builds, audits)
 - All design (vibe coding, dashboards, Figma → React)
-- All social/LinkedIn (18 LinkedIn skills, YouTube, newsletter)
+- All social/LinkedIn (LinkedIn content, YouTube, newsletter)
 - All lifecycle (email nurture, lifecycle campaigns)
 - All meta/orchestration (`/orchestrator`, `/recall`, `/today`, `/wiki`, `/weekly-audit`)
 - All hooks (no auto-validation, no catalog regen, no output routing)
 - All rules (taught inline in this pack instead of auto-loaded from a rule file)
+- Content ops (collapsed into `/content-strategy` here; the full ops layer is gated)
 
-If you want any of those, see the advanced tier at [genesysgrowth.com](https://genesysgrowth.com).
+If you want any of those, contact me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/).
 
 ---
 
@@ -137,29 +170,22 @@ If you want any of those, see the advanced tier at [genesysgrowth.com](https://g
 .
 ├── README.md           ← you are here
 ├── CLAUDE.md           ← repo-level Claude context (loaded every session)
-├── INSTALL.md          ← multi-runtime install guide (Claude Code, Cowork, claude.ai)
-├── MIGRATION.md        ← v1 → v2 port instructions (if you're upgrading)
-├── marketing/          ← your marketing/ workspace
+├── INSTALL.md          ← multi-runtime install guide (Claude Code, Cowork)
+├── FAQ.md              ← common questions
+├── marketing/          ← your marketing workspace
 ├── .claude/
-│   ├── skills/         ← 14 skills (research/ + primitives/)
+│   ├── skills/         ← 11 skills (research/ + primitives/)
 │   ├── agents/         ← 12 agents (3 roles + 9 specialists)
-│   └── commands/       ← 15 slash commands
-├── scripts/            ← sync-from-master + sanitize-check (for maintainers)
-├── templates/          ← CLAUDE-MD-TEMPLATE.md + SKILL-MD-TEMPLATE.md
-└── FAQ.md              ← common questions
+│   └── commands/       ← 13 slash commands
+├── context/            ← raw research source files (transcripts, decks)
+└── templates/          ← CLAUDE.md + SKILL.md authoring prompts
 ```
-
----
-
-## Upgrading from v1
-
-If you cloned the v1 quickstart (the one with `marketing/{brand,content,demand-gen,product-marketing,swipe-file}/` flat layout), see [`MIGRATION.md`](./MIGRATION.md) for the port. Short version: your old outputs map cleanly into the new the marketing/ folder convention subfolders by topic, not by the v1 lifecycle category.
 
 ---
 
 ## Feedback + contributions
 
-This is an opinionated starter pack maintained by [Matteo Tittarelli](https://genesysgrowth.com). Issues, PRs, and suggestions welcome on [GitHub](https://github.com/matteotitta/claude-code-marketing-quickstart). For deep questions about the architecture, the master workspace, or the gated/paid tier, reach out via [genesysgrowth.com](https://genesysgrowth.com).
+This is an opinionated starter pack maintained by [Matteo Tittarelli](https://www.linkedin.com/in/matteotittarelli/). Issues, PRs, and suggestions welcome on [GitHub](https://github.com/matteotitta/claude-code-marketing-quickstart). For deep questions about the architecture or the gated/advanced tier, reach out on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/).
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 name: content-strategist
 role: pmm
-description: Use this agent when planning content calendars, editorial strategy, content operations, or channel mix decisions. Activate when user needs a content plan, editorial framework, or content operations system. Examples: <example>"create a content strategy for [client]"</example> <example>"plan the editorial calendar"</example> <example>"set up content operations"</example>
-model: sonnet
-color: yellow
+description: Use this agent when planning content calendars, editorial strategy, content operations, or channel mix decisions. Activate when user needs a content plan, editorial framework, or content operations system. Examples: <example>"create a content strategy"</example> <example>"plan the editorial calendar"</example> <example>"set up content operations"</example>
+model: opus
+color: green
 tools: ["Read", "Write", "Glob", "Grep", "Bash", "WebFetch", "WebSearch"]
 memory: project
 skills:

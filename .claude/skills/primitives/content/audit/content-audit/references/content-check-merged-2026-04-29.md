@@ -197,16 +197,6 @@ If a critical signal scores SLOP, the idea cannot PASS regardless of total score
 
 ---
 
-## Integration with Paperclip content ops
-
-When running inside the Paperclip content operations pipeline (Step 4d):
-- This skill runs **between** the content calendar (from content-strategy) and production task creation
-- If verdict is REJECT, the content ops pipeline skips this piece and logs the rejection
-- If verdict is REVISE, the pipeline pauses and requests human input on the fixes before proceeding
-- If verdict is PASS, the production task is created for the Content Creator agent
-
----
-
 ## What good looks like
 
 ### Example: PASS

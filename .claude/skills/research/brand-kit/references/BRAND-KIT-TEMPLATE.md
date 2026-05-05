@@ -1,5 +1,5 @@
 ---
-name: {{client-slug}}-brand
+name: {{company-slug}}-brand
 version: "1.0"
 author: marketing-team
 last_updated: {{YYYY-MM-DD}}

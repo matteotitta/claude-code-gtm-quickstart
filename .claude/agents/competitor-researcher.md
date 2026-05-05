@@ -1,10 +1,10 @@
 ---
 name: competitor-researcher
 role: researcher
-description: Use this agent when the task involves deep competitor analysis across positioning, pricing, features, content, and GTM strategy. Activate when user mentions a competitor name, asks for competitive analysis, or needs battlecard inputs. Examples: <example>"analyze [competitor]"</example> <example>"how does [company] position themselves"</example> <example>"competitive landscape for [client]"</example>
+description: Use this agent when the task involves deep competitor analysis across positioning, pricing, features, content, and GTM strategy. Activate when user mentions a competitor name, asks for competitive analysis, or needs battlecard inputs. Examples: <example>"analyze [competitor]"</example> <example>"how does [company] position themselves"</example> <example>"competitive landscape for our market"</example>
 model: sonnet
 color: blue
-tools: ["Read", "Write", "Glob", "Grep", "Bash", "WebFetch", "WebSearch", "mcp__exa__web_search_exa", "mcp__exa__company_research_exa"]
+tools: ["Read", "Write", "Glob", "Grep", "Bash", "WebFetch", "WebSearch"]
 memory: project
 skills:
 effort: medium

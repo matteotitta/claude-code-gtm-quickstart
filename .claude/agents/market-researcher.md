@@ -1,10 +1,10 @@
 ---
 name: market-researcher
 role: researcher
-description: Use this agent when the task involves company research, ICP profiles, or expert POV development. Activate for any work that needs company background, ideal customer profiling, or market context building. Examples: <example>"research this company"</example> <example>"build ICP for [client]"</example> <example>"what does [company] do"</example>
+description: Use this agent when the task involves company research, ICP profiles, or expert POV development. Activate for any work that needs company background, ideal customer profiling, or market context building. Examples: <example>"research this company"</example> <example>"build our ICP"</example> <example>"what does [company] do"</example>
 model: sonnet
 color: blue
-tools: ["Read", "Write", "Glob", "Grep", "Bash", "WebFetch", "WebSearch", "mcp__exa__web_search_exa", "mcp__exa__company_research_exa"]
+tools: ["Read", "Write", "Glob", "Grep", "Bash", "WebFetch", "WebSearch"]
 memory: project
 skills:
 effort: high
