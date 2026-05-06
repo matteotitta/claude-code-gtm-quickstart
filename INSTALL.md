@@ -1,8 +1,8 @@
 # Genesys Claude Code Marketing Quickstart — install guide
 
-This pack works on two Claude runtimes today: **Claude Code** (full experience, recommended) and **Cowork** (plugin install). Five-minute setup either way.
+This pack works on three Claude runtimes: **Claude Code** (full experience, recommended), **Cowork** (plugin install), and **claude.ai Projects** (lite, manual upload). Five-minute setup on Path A or B; Path C is degraded but functional.
 
-> **Not sure what to pick?** If you write your prompts in a terminal and edit files locally, you're on **Claude Code → Path A**. If you use the Cowork desktop or web app, **→ Path B**.
+> **Not sure what to pick?** Terminal + local files → **Claude Code (Path A)**. Cowork desktop/web app → **Path B**. claude.ai in a browser with Projects → **Path C** (lite — no slash commands, no file I/O, but you keep the prompt patterns and folder convention).
 
 ---
 
@@ -105,17 +105,23 @@ For research skills (the first chain below), use **Opus** for best results. The 
 
 **Prereqs:** Cowork account with Personal Plugins enabled.
 
-### Steps
+### Steps (recommended — download and upload)
 
-1. Open Cowork → **Personal Plugins** → **Add**.
-2. Paste this marketplace path:
+1. Go to the [GitHub repo](https://github.com/matteotitta/claude-code-marketing-quickstart) and click **Code → Download ZIP**.
+2. Open Cowork → **Personal Plugins** → **Add**.
+3. Drag the downloaded zip into the Add dialog.
+4. Install. The slash commands appear in your menu.
+5. Open a new Cowork session and run `/quickstart`.
 
-   ```
-   github.com/matteotitta/claude-code-marketing-quickstart
-   ```
+### Alternative — marketplace path (try this if you prefer)
 
-3. Install. The slash commands appear in your menu.
-4. Open a new Cowork session and run `/quickstart`.
+In Cowork → **Personal Plugins** → **Add**, paste:
+
+```
+github.com/matteotitta/claude-code-marketing-quickstart
+```
+
+If it installs cleanly, the slash commands appear in your menu. If you hit a 404 or the install fails, fall back to the download-and-upload steps above and DM me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) so I can fix the marketplace path.
 
 ### Verify it works
 
@@ -123,11 +129,70 @@ Run `/positioning` in any Cowork session. **What you should see:** Claude asks f
 
 ### If something goes wrong
 
-**Plugin install fails (404 or similar).**
-Cowork plugin support assumes the marketplace path is reachable. If you hit a 404, drop me a line on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) — Cowork support timing varies.
-
 **Commands don't show in the slash menu.**
-Refresh the Cowork session. If still missing, the install probably didn't complete cleanly — re-run step 1.
+Refresh the Cowork session. If still missing, the install probably didn't complete cleanly — re-run from step 1.
+
+**Plugin install fails on either path.**
+DM me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) — happy to unblock.
+
+---
+
+## Path C — claude.ai Projects (lite — manual upload)
+
+**Prereqs:** claude.ai Pro, Team, or Enterprise account (Projects feature required).
+
+### Honest framing first
+
+Path C is a **degraded experience** compared to Paths A and B. claude.ai can't:
+- Run slash commands (you invoke skills verbally — "Run the positioning skill")
+- Read or write files (Claude produces text in chat; you copy it where needed)
+- Persist state automatically between chats (each new chat starts fresh, though Project Knowledge stays loaded)
+- Connect to MCP servers, external tools, or your file system
+
+What you DO get: the prompt patterns, the marketing/ folder convention as a mental model, the voice conventions, and the 11 skill activation guides. It's the system without the persistence.
+
+If that fits your constraints, here's the install.
+
+### Steps
+
+1. Download the repo:
+   - **Option A:** on the [GitHub repo](https://github.com/matteotitta/claude-code-marketing-quickstart), click **Code → Download ZIP** and unzip locally.
+   - **Option B:** if you have git, run `git clone https://github.com/matteotitta/claude-code-marketing-quickstart.git`.
+
+2. Open the `claude-ai/` folder. You'll see 4 markdown files:
+   - `INSTRUCTIONS.md`
+   - `01-skills-catalog.md`
+   - `02-marketing-folder-convention.md`
+   - `03-voice-conventions.md`
+
+3. In claude.ai → **Create Project** → name it (e.g., "Marketing Workspace").
+
+4. **Custom Instructions:** open `INSTRUCTIONS.md` from the `claude-ai/` folder, copy its full contents, paste into the Project's **Custom Instructions** field. (~900 tokens — well under claude.ai's 8000-token limit.)
+
+5. **Project Knowledge:** drag the other 3 files (`01-skills-catalog.md`, `02-marketing-folder-convention.md`, `03-voice-conventions.md`) into the Project's **Knowledge** area.
+
+### Verify it works
+
+Open a new chat in the Project. Type:
+
+```
+Run the positioning skill
+```
+
+**What you should see:** Claude asks for your ICP, competitive context, and the angle you want to test — *before* producing a draft. The output ends with a suggested filename (`MMYY-positioning.md`) and a "where it would live" note.
+
+If Claude responds without asking for inputs, the Custom Instructions paste was probably truncated. Re-paste and try again.
+
+### If something goes wrong
+
+**Custom Instructions paste appears truncated.**
+Refresh your browser session and re-paste. claude.ai accepts up to ~8000 tokens of Custom Instructions; INSTRUCTIONS.md is ~900 tokens, so size isn't the issue — usually a stale browser session.
+
+**Knowledge files don't seem to be referenced.**
+Open a new chat in the Project (not a continuation of an old one) and ask: "What's in your Project Knowledge?" If Claude doesn't list the 3 files, drag them again.
+
+**You want to save outputs.**
+claude.ai can't write files. Copy each output, save it locally with the suggested filename (`MMYY-topic.md`), and optionally re-upload finished outputs into Project Knowledge so future chats can reference them.
 
 ---
 

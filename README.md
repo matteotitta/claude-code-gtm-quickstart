@@ -1,6 +1,6 @@
 # Genesys Claude Code Marketing Quickstart
 
-A lean, opinionated starter pack for marketing teams running their GTM in Claude Code or Cowork.
+A lean, opinionated starter pack for marketing teams running their GTM in Claude Code, Cowork, or claude.ai Projects.
 
 **11 skills · 12 agents · 12 commands · single `marketing/` workspace.**
 
@@ -10,12 +10,13 @@ Built by [Matteo Tittarelli](https://www.linkedin.com/in/matteotittarelli/) (Gen
 
 ## What this is
 
-Two derivatives, one source of truth:
+Three derivatives, one source of truth:
 
 | Runtime | What you install | Where the install guide lives |
 |---|---|---|
-| **Claude Code** | This repo (`git clone`) | This README + [`CLAUDE.md`](./CLAUDE.md) |
-| **Cowork** | Plugin via marketplace OR drag-zip | [`INSTALL.md`](./INSTALL.md) → Path B |
+| **Claude Code** (full experience) | This repo (`git clone`) | This README + [`CLAUDE.md`](./CLAUDE.md) |
+| **Cowork** | Plugin via drag-zip (marketplace as fallback) | [`INSTALL.md`](./INSTALL.md) → Path B |
+| **claude.ai Projects** (lite) | Manual upload of `claude-ai/` files | [`INSTALL.md`](./INSTALL.md) → Path C |
 
 If you don't know which to pick, see the decision tree at the top of [`INSTALL.md`](./INSTALL.md).
 
@@ -170,12 +171,13 @@ If you want any of those, contact me on [LinkedIn](https://www.linkedin.com/in/m
 .
 ├── README.md           ← you are here (install + FAQ at the bottom)
 ├── CLAUDE.md           ← repo-level Claude context (loaded every session)
-├── INSTALL.md          ← multi-runtime install guide (Claude Code, Cowork)
+├── INSTALL.md          ← multi-runtime install guide (Claude Code, Cowork, claude.ai)
 ├── marketing/          ← your marketing workspace
 ├── .claude/
 │   ├── skills/         ← 11 skills (research/ + primitives/)
 │   ├── agents/         ← 12 agents (3 roles + 9 specialists)
 │   └── commands/       ← 12 slash commands
+├── claude-ai/          ← claude.ai Projects pack (manual upload, lite runtime)
 ├── context/            ← raw research source files (transcripts, decks)
 └── templates/          ← CLAUDE.md + SKILL.md authoring prompts
 ```

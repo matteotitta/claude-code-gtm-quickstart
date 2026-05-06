@@ -4,7 +4,7 @@ Welcome. This is the repo-level context loaded into every Claude Code session ru
 
 If this is your first session, run `/quickstart` to personalize the workspace.
 
-If you don't use Claude Code, see [INSTALL.md](./INSTALL.md) for the Cowork install path.
+If you don't use Claude Code, see [INSTALL.md](./INSTALL.md) for the Cowork (Path B) and claude.ai Projects (Path C, lite) install paths.
 
 ---
 
