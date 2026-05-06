@@ -15,7 +15,7 @@ Three derivatives, one source of truth:
 | Runtime | What you install | Where the install guide lives |
 |---|---|---|
 | **Claude Code** (full experience) | This repo (`git clone`) | This README + [`CLAUDE.md`](./CLAUDE.md) |
-| **Cowork** | Plugin via drag-zip (marketplace as fallback) | [`INSTALL.md`](./INSTALL.md) → Path B |
+| **Cowork** | Plugin upload via drag-zip (marketplace as fallback) | [`INSTALL.md`](./INSTALL.md) → Path B |
 | **claude.ai Projects** (lite) | Manual upload of `claude-ai/` files | [`INSTALL.md`](./INSTALL.md) → Path C |
 
 If you don't know which to pick, see the decision tree at the top of [`INSTALL.md`](./INSTALL.md).

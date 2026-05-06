@@ -132,7 +132,7 @@ The skill executes 6 phases. Detailed sub-steps + checkpoints in `references/ste
 - `references/quality-and-governance.md` — anti-hallucination guardrails, pre-delivery checklist, iteration prompts, integration map, gotchas, auto-update protocol, MCP integration, Exa research substrate, changelog
 
 ### Examples
-- `examples/example-integrateio.md` — Integrate.io worked example (Data Delivery Platform category creation) + appended fragments showing goals, service-based pillars with funnel mapping, and the 90-day plan + an anti-examples table
+- `examples/example-linear.md` — Linear worked example (craft-led B2B SaaS in saturated category) showing single-persona discipline, three-pillar topic mix, weekly changelog cadence, and the "ship cadence IS the content" pattern
 
 ### Evaluations
 
