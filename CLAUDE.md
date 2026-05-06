@@ -21,7 +21,7 @@ The `/quickstart` command personalizes `marketing/CLAUDE.md` (not this file). Th
 
 ## What ships in this Quickstart
 
-A lean starter pack — 11 skills + 12 agents + 13 commands. No hooks, no rules, no meta/orchestration. The full taxonomy stays gated for the advanced tier (DM me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) if interested).
+A lean starter pack — 11 skills + 12 agents + 12 commands. No hooks, no rules, no meta/orchestration. The full taxonomy stays gated for the advanced tier (DM me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) if interested).
 
 ### Skills (11)
 
@@ -39,9 +39,9 @@ Three role-agents (`researcher`, `pmm`, `content`) + nine specialists (`market-r
 
 Role-agents are dispatch routers. Specialists are tuned executors invoked when narrow expertise is needed.
 
-### Commands (13)
+### Commands (12)
 
-`/quickstart` (onboarding) + 12 slash commands (one per skill, plus `/brand-kit`). Type `/` in the Claude Code chat to see them all.
+`/quickstart` (onboarding) + 11 skill-aligned commands. Type `/` in the Claude Code chat to see them all.
 
 ---
 
@@ -114,7 +114,7 @@ These are the conventions baked into shipped skill prompts and agent prose. They
 
 ---
 
-## What's NOT shipped (gated)
+## What's NOT included
 
 The following capabilities stay gated for the advanced tier:
 
@@ -143,10 +143,9 @@ If you want any of those, contact me on [LinkedIn](https://www.linkedin.com/in/m
 | `CLAUDE.md` (this file) | Repo-level always-loaded context |
 | `README.md` | First-time install + setup walkthrough |
 | `INSTALL.md` | Multi-runtime install guide (Claude Code, Cowork) |
-| `FAQ.md` | Common questions every team asks in week 1 |
 | `marketing/` | The marketing workspace |
 | `.claude/skills/` | 11 shipped skills (research/ + primitives/) |
 | `.claude/agents/` | 12 shipped agents (3 role-agents + 9 specialists) |
-| `.claude/commands/` | 13 shipped slash commands |
+| `.claude/commands/` | 12 shipped slash commands |
 | `context/` | Raw research source files (transcripts, decks, screenshots) |
 | `templates/` | CLAUDE.md and SKILL.md authoring prompts |

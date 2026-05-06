@@ -149,7 +149,7 @@ Each skill saves output to a folder under `marketing/`. Read the README for the 
 
 ---
 
-## What's NOT shipped (gated)
+## What's NOT included
 
 This is a starter pack. The following stay gated for the advanced tier:
 
