@@ -161,7 +161,7 @@ This Quickstart is intentionally lean. The following stay gated for the advanced
 - All rules (taught inline in this pack instead of auto-loaded from a rule file)
 - Content ops (collapsed into `/content-strategy` here; the full ops layer is gated)
 
-If you want any of those, contact me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/).
+If you want to build custom systems for your team, reach out on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) or [reserve your spot](https://docs.google.com/forms/d/e/1FAIpQLSegvrkP57IRfbo7Q6f1bhd8hpTDZ7C6McCNZprGkDcsQWvN6Q/viewform).
 
 ---
 

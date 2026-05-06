@@ -308,7 +308,7 @@ This is a starter pack. The following stay gated for the advanced tier:
 - All meta/orchestration (`/orchestrator`, `/recall`, `/today`, `/wiki`, `/weekly-audit`)
 - All hooks (no automated catalog regen, output routing, naming enforcement)
 
-If you want any of those, contact me on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/).
+If you want to build custom systems for your team, reach out on [LinkedIn](https://www.linkedin.com/in/matteotittarelli/) or [reserve your spot](https://docs.google.com/forms/d/e/1FAIpQLSegvrkP57IRfbo7Q6f1bhd8hpTDZ7C6McCNZprGkDcsQWvN6Q/viewform).
 
 ---
 
